@@ -1,9 +1,20 @@
 import styled from "styled-components/macro";
 import { vars } from "../../helpers/styles/variables";
+import { media } from "../../helpers/styles/mixins";
 
 export const Container = styled.footer`
   color: ${vars.color.grey};
   padding: 4rem ${vars.padding.small} 2rem ${vars.padding.small};
+
+  ${media("medium")} {
+    padding-left: ${vars.padding.medium};
+    padding-right: ${vars.padding.medium};
+  }
+
+  ${media("xlarge")} {
+    padding-left: ${vars.padding.big};
+    padding-right: ${vars.padding.big};
+  }
 `;
 
 export const Title = styled.h1`
@@ -12,7 +23,11 @@ export const Title = styled.h1`
 
 export const List = styled.ul`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+
+  ${media("small")} {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
 
   li {
     margin-bottom: 0.7rem;

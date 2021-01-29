@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import { Container, Logo } from './Header.styles';
-import { Button } from '../Button/Button.styles';
+import { Container, Logo } from "./Header.styles";
+import { Button } from "../Button/Button.styles";
 
-import logo from '../../images/misc/logo.png';
+import logo from "../../images/misc/logo.png";
 
 export default function Header() {
   return (

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Container, Title, List, Select, Copyright } from './Footer.styles';
-import { footerData } from '../../data';
+import React from "react";
+import { Container, Title, List, Select, Copyright } from "./Footer.styles";
+import { footerData } from "../../data";
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
       <Title>{footerData.title}</Title>
 
       <List>
-        {footerData.navLinks.map((link, index) => (
+        {footerData.en.navLinks.map((link, index) => (
           <li key={index}>
             <a href="/">{link}</a>
           </li>
