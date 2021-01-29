@@ -1,10 +1,10 @@
-import styled from 'styled-components/macro';
-import { vars } from '../../../helpers/styles/variables';
-import { media } from '../../../helpers/styles/mixins';
+import styled from "styled-components/macro";
+import { vars } from "../../../helpers/styles/variables";
+import { media } from "../../../helpers/styles/mixins";
 
 export const Container = styled.section`
   height: 70vh;
-  max-width: 45rem;
+  max-width: 22rem;
   margin: auto;
 
   display: flex;
@@ -13,7 +13,11 @@ export const Container = styled.section`
   justify-content: center;
   text-align: center;
 
-  ${media('medium')} {
+  ${media("small")} {
+    max-width: 40rem;
+  }
+
+  ${media("medium")} {
     height: calc(100vh - 4.5rem);
   }
 `;
@@ -32,7 +36,7 @@ export const Background = styled.img`
   filter: brightness(0.7);
   object-fit: cover;
 
-  ${media('medium')} {
+  ${media("medium")} {
     height: 100vh;
   }
 `;
@@ -49,7 +53,7 @@ export const Title = styled.div`
     font-weight: normal;
   }
 
-  ${media('small')} {
+  ${media("small")} {
     h1 {
       font-size: ${vars.fontSize.big};
     }
@@ -73,28 +77,24 @@ export const Email = styled.div`
     margin-bottom: 1rem;
   }
 
-  .input_container {
+  form {
     width: 100%;
   }
 
-  input {
-    margin-bottom: 0.5rem;
-  }
-
   button {
-    margin: auto;
+    margin: 0.5rem auto auto auto;
   }
 
-  ${media('small')} {
-    .input_container {
-      width: 100%;
+  ${media("small")} {
+    form {
       display: flex;
-      justify-content: center;
-      align-items: center;
+
+      & > div {
+        height: 4rem;
+      }
     }
 
     input {
-      margin-bottom: 0;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
@@ -108,6 +108,7 @@ export const Email = styled.div`
       font-size: 1.5rem;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+      margin: 0;
     }
 
     h3 {
@@ -115,9 +116,9 @@ export const Email = styled.div`
     }
   }
 
-  ${media('medium')} {
-    input {
+  ${media("medium")} {
+    /* input {
       height: 4rem;
-    }
+    } */
   }
 `;

@@ -1,10 +1,10 @@
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import React from 'react';
-import { Button } from '../../../components/Button/Button.styles';
-import { Input } from '../../../components/Input/Input.styles';
-import { landingData } from '../../../data';
-import heroImg from '../../../images/misc/hero-bg.jpg';
-import { Background, Container, Email, Title } from './Hero.styles';
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import React from "react";
+import { Button } from "../../../components/Button/Button.styles";
+import Input from "../../../components/Input/Input";
+import { landingData } from "../../../data";
+import heroImg from "../../../images/misc/hero-bg.jpg";
+import { Background, Container, Email, Title } from "./Hero.styles";
 
 export default function Hero() {
   return (
@@ -17,13 +17,13 @@ export default function Hero() {
 
       <Email>
         <h3>{landingData.hero.emailText}</h3>
-        <div className="input_container">
-          <Input type="email" placeholder="Email address" />
-          <Button big>
+        <form>
+          <Input label="Email address" name="email" type="email" required />
+          <Button type="submit" big>
             GET STARTED
             <ArrowForwardIosIcon />
           </Button>
-        </div>
+        </form>
       </Email>
     </Container>
   );

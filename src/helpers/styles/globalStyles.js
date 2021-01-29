@@ -1,6 +1,6 @@
-import * as styled from 'styled-components';
-import { vars } from './variables';
-import { media } from './mixins';
+import * as styled from "styled-components";
+import { vars } from "./variables";
+import { media } from "./mixins";
 
 export const GlobalStyles = styled.createGlobalStyle`
   html {
@@ -26,7 +26,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     padding: 1.5rem 5vw 0 5vw;
     color: ${vars.color.white};
 
-    ${media('xlarge')} {
+    ${media("xlarge")} {
       padding-left: 18vw;
       padding-right: 18vw;
     }
