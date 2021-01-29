@@ -1,5 +1,5 @@
-import styled from 'styled-components/macro';
-import { vars } from '../../helpers/styles/variables';
+import styled from "styled-components/macro";
+import { vars } from "../../helpers/styles/variables";
 
 export const Container = styled.footer`
   color: ${vars.color.grey};
@@ -7,7 +7,6 @@ export const Container = styled.footer`
 `;
 
 export const Title = styled.h1`
-  font-weight: normal;
   margin-bottom: 1.5rem;
 `;
 
@@ -24,6 +23,8 @@ export const List = styled.ul`
 `;
 
 export const Select = styled.div`
+  margin-top: 2rem;
+
   select {
     background-color: ${vars.color.black};
     padding: 1rem 2rem;
