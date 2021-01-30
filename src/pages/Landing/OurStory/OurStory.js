@@ -1,18 +1,20 @@
 import React from "react";
 import { DividingLine } from "../../../components/DividingLine/DividingLine.styles";
 import { landingData } from "../../../data";
-import { Section, Text, Image } from "./OurStory.styles";
+import { Section, Image } from "./OurStory.styles";
+import Title from "../../../components/Title/Title.styles";
+import Subtitle from "../../../components/Subtitle/Subtitle.styles";
 
 export default function OurStory() {
   return (
     <>
-      {landingData.ourStory.map((section, index) => (
+      {landingData.en.ourStory.map((section, index) => (
         <div key={index}>
           <Section className={section.class}>
-            <Text>
-              <h1>{section.title}</h1>
-              <h2>{section.subtitle}</h2>
-            </Text>
+            <div>
+              <Title>{section.title}</Title>
+              <Subtitle>{section.subtitle}</Subtitle>
+            </div>
 
             <div>
               <Image src={section.img} alt={section.alt} />

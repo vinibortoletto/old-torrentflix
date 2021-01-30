@@ -19,19 +19,6 @@ export const Section = styled.section`
   }
 `;
 
-export const Text = styled.div`
-  h1 {
-    font-size: ${vars.fontSize.medium};
-    margin-bottom: 1rem;
-    font-size: ${vars.fontSize.big};
-  }
-
-  h2 {
-    font-weight: normal;
-    font-size: ${vars.fontSize.medium};
-  }
-`;
-
 export const Image = styled.img`
   width: 100%;
   height: 100%;

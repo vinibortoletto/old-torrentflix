@@ -18,7 +18,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     color: inherit;
     font-family: ${vars.fontFamily.openSans};
     border: none;
-    font-size: inherit;
+    font-size: 1.1rem;
   }
 
   body {

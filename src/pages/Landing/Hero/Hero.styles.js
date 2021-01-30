@@ -20,6 +20,10 @@ export const Container = styled.section`
   ${media("medium")} {
     height: calc(100vh - 4.5rem);
   }
+
+  .text-wrapper {
+    margin-bottom: 2rem;
+  }
 `;
 
 export const Background = styled.img`
@@ -38,29 +42,6 @@ export const Background = styled.img`
 
   ${media("medium")} {
     height: 100vh;
-  }
-`;
-
-export const Title = styled.div`
-  margin-bottom: 2rem;
-
-  h1 {
-    font-size: ${vars.fontSize.medium};
-    margin-bottom: 0.5rem;
-  }
-
-  h2 {
-    font-weight: normal;
-  }
-
-  ${media("small")} {
-    h1 {
-      font-size: ${vars.fontSize.big};
-    }
-
-    h2 {
-      font-size: ${vars.fontSize.medium};
-    }
   }
 `;
 
