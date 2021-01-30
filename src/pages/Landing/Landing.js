@@ -13,6 +13,7 @@ export default function Landing() {
       <DividingLine />
       <OurStory />
       <FAQ />
+      <DividingLine />
     </main>
   );
 }
