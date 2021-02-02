@@ -1,6 +1,6 @@
-import styled from "styled-components/macro";
-import { vars } from "../../helpers/styles/variables";
-import { media } from "../../helpers/styles/mixins";
+import styled from 'styled-components/macro';
+import { vars } from '../../../helpers/styles/variables';
+import { media } from '../../../helpers/styles/mixins';
 
 export const Container = styled.header`
   max-width: 120rem;
@@ -17,7 +17,7 @@ export const Container = styled.header`
     font-size: ${vars.fontSize.small};
   }
 
-  ${media("tablet")} {
+  ${media('tablet')} {
     button {
       height: 2rem;
       font-size: 1.1rem;
@@ -26,6 +26,10 @@ export const Container = styled.header`
 `;
 
 export const Logo = styled.img`
-  width: 50%;
+  width: 80%;
   max-width: 10rem;
+
+  ${media('tablet')} {
+    width: 100%;
+  }
 `;
