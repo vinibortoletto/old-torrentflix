@@ -23,13 +23,13 @@ export const GlobalStyles = styled.createGlobalStyle`
 
   body {
     background-color: ${vars.color.black};
-    padding: 1.5rem 5vw 0 5vw;
     color: ${vars.color.white};
+  }
 
-    ${media("xlarge")} {
-      padding-left: 18vw;
-      padding-right: 18vw;
-    }
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 
   button,

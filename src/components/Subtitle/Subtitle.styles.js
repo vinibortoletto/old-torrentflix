@@ -4,9 +4,8 @@ import { media } from "../../helpers/styles/mixins";
 
 const H2 = styled.h2`
   font-weight: normal;
-  margin-bottom: 1rem;
 
-  ${media("small")} {
+  ${media("laptop-s")} {
     font-size: ${vars.fontSize.medium};
   }
 `;

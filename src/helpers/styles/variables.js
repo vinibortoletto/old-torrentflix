@@ -11,11 +11,12 @@ export const vars = {
     openSans: '"Open Sans", sans-serif',
   },
   fontSize: {
-    small: ".8rem",
+    small: ".9rem",
     medium: "1.75rem",
-    big: "3.125rem",
+    big: "2.5rem",
+    large: "3rem",
   },
-  padding: {
+  size: {
     small: "5vw",
     medium: "10vw",
     big: "18vw",

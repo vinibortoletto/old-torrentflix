@@ -3,17 +3,13 @@ import { vars } from "../../helpers/styles/variables";
 import { media } from "../../helpers/styles/mixins";
 
 export const Container = styled.footer`
+  max-width: 75rem;
+  margin: auto;
   color: ${vars.color.grey};
-  padding: 4rem ${vars.padding.small} 2rem ${vars.padding.small};
+  padding: 4rem ${vars.size.medium} 2rem ${vars.size.medium};
 
-  ${media("medium")} {
-    padding-left: ${vars.padding.medium};
-    padding-right: ${vars.padding.medium};
-  }
-
-  ${media("xlarge")} {
-    padding-left: ${vars.padding.big};
-    padding-right: ${vars.padding.big};
+  h1 {
+    font-weight: normal;
   }
 `;
 
@@ -23,15 +19,16 @@ export const Title = styled.h1`
 
 export const List = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
 
-  ${media("small")} {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  ${media("tablet")} {
+    grid-template-columns: repeat(4, 1fr);
   }
 
   li {
     margin-bottom: 0.7rem;
   }
+
   a {
     font-size: ${vars.fontSize.small};
   }
@@ -39,22 +36,43 @@ export const List = styled.ul`
 
 export const Select = styled.div`
   margin-top: 2rem;
+  position: relative;
+
+  &::before {
+    content: "🌐";
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    filter: grayscale(1) contrast(2);
+  }
+
+  &::after {
+    content: "▼";
+    position: absolute;
+    top: 1rem;
+    left: 8.7rem;
+    transform: scaleX(1.5) scale(0.6);
+  }
 
   select {
     background-color: ${vars.color.black};
-    padding: 1rem 2rem;
-    border: 1px solid ${vars.color.grey};
+    padding: 1rem 2rem 1rem 3rem;
+    border: 1px solid rgba(117, 117, 117, 0.3);
     border-radius: ${vars.borderRadius.small};
   }
 `;
 
 export const Copyright = styled.div`
-  font-size: ${vars.fontSize.small};
   text-align: center;
   margin-top: 2rem;
 
   .strong {
     color: ${vars.color.red};
     font-weight: bold;
+  }
+
+  p {
+    margin-top: 1rem;
+    font-size: ${vars.fontSize.small};
   }
 `;

@@ -1,10 +1,20 @@
 import styled from "styled-components";
 import { vars } from "../../helpers/styles/variables";
+import { media } from "../../helpers/styles/mixins";
 
 export const Container = styled.div`
-  height: 3.5rem;
+  /* height: 3.5rem; */
   width: 100%;
   position: relative;
+
+  input {
+    height: 100%;
+    width: 100%;
+    padding: 0.6rem;
+    padding-top: 1.2rem;
+    border-radius: ${vars.borderRadius.small};
+    color: ${vars.color.black};
+  }
 
   label {
     position: absolute;
@@ -18,6 +28,8 @@ export const Container = styled.div`
     pointer-events: none;
     transition: 0.2s ease;
 
+    font-size: ${vars.fontSize.small};
+
     &.active {
       padding-top: 0.2rem;
       font-size: ${vars.fontSize.small};
@@ -26,12 +38,9 @@ export const Container = styled.div`
     }
   }
 
-  input {
-    height: 100%;
-    width: 100%;
-    padding: 0.6rem;
-    padding-top: 1.2rem;
-    border-radius: ${vars.borderRadius.small};
-    color: ${vars.color.black};
+  ${media("tablet")} {
+    label {
+      font-size: 1rem;
+    }
   }
 `;

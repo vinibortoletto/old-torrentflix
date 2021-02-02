@@ -4,8 +4,6 @@ import FAQ from "./FAQ/FAQ";
 import Hero from "./Hero/Hero";
 import OurStory from "./OurStory/OurStory";
 
-// import { Main } from "./Landing.styles";
-
 export default function Landing() {
   return (
     <main>

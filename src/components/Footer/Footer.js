@@ -5,7 +5,7 @@ import { footerData } from "../../data";
 export default function Footer() {
   return (
     <Container>
-      <Title>{footerData.title}</Title>
+      <Title>{footerData.en.title}</Title>
 
       <List>
         {footerData.en.navLinks.map((link, index) => (
@@ -26,11 +26,12 @@ export default function Footer() {
       </Select>
 
       <Copyright>
-        <p className="strong">Create by Vinicius Bortoletto</p>
         <p>
           This clone-app was created for study only. Image rights reserved to
           Netflix
         </p>
+
+        <p className="strong">Create by Vinicius Bortoletto</p>
       </Copyright>
     </Container>
   );
