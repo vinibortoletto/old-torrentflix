@@ -1,6 +1,6 @@
-import * as styled from "styled-components";
-import { vars } from "./variables";
-import { media } from "./mixins";
+import * as styled from 'styled-components';
+import { vars } from './variables';
+import { media } from './mixins';
 
 export const GlobalStyles = styled.createGlobalStyle`
   html {
@@ -30,6 +30,17 @@ export const GlobalStyles = styled.createGlobalStyle`
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+  }
+
+  label[for='language'] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
   }
 
   button,

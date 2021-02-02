@@ -1,14 +1,28 @@
-import React from "react";
-import { Container, Title, List, Select, Copyright } from "./Footer.styles";
-import { footerData } from "../../data";
+import React from 'react';
+import { useLibrary } from '../../contexts/Library';
+import { footerData } from '../../data';
+import { Container, Copyright, List, Select, Title } from './Footer.styles';
 
 export default function Footer() {
+  const { language, setLanguage } = useLibrary();
+  const { title, navLinks, copyright } =
+    language === 'en' ? footerData.en : footerData.br;
+
+  function changeLanguage() {
+    const selectElmt = document.getElementById('language');
+    setLanguage(selectElmt.value);
+    localStorage.setItem('language', JSON.stringify(selectElmt.value));
+
+    window.scrollTo(0, 0);
+    window.location.reload();
+  }
+
   return (
     <Container>
-      <Title>{footerData.en.title}</Title>
+      <Title>{title}</Title>
 
       <List>
-        {footerData.en.navLinks.map((link, index) => (
+        {navLinks.map((link, index) => (
           <li key={index}>
             <a href="/">{link}</a>
           </li>
@@ -16,22 +30,28 @@ export default function Footer() {
       </List>
 
       <Select>
-        <label htmlFor="language" />
-        <select name="language" id="language">
+        <label htmlFor="language">
+          {language === 'en' ? 'Language' : 'Idioma'}
+        </label>
+
+        <select
+          onChange={changeLanguage}
+          value={language}
+          name="language"
+          id="language"
+        >
+          <option value="en">English</option>
           <option value="br">Português</option>
-          <option defaultValue value="en">
-            English
-          </option>
         </select>
       </Select>
 
       <Copyright>
-        <p>
-          This clone-app was created for study only. Image rights reserved to
-          Netflix
+        <p>{copyright}</p>
+        <p className="strong">
+          {language === 'en'
+            ? `Created by Vinicius Bortoletto`
+            : `Criado por Vinicius Bortoletto`}
         </p>
-
-        <p className="strong">Create by Vinicius Bortoletto</p>
       </Copyright>
     </Container>
   );

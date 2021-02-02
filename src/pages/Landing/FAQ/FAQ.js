@@ -1,30 +1,35 @@
-import React from "react";
-import Title from "../../../components/Title/Title.styles";
-import { Section, List, Button } from "./FAQ.styles";
-import { landingData } from "../../../data";
-import AddIcon from "@material-ui/icons/Add";
-import Subscribe from "../../../components/Subscribe/Subscribe";
+import AddIcon from '@material-ui/icons/Add';
+import React from 'react';
+import Subscribe from '../../../components/Subscribe/Subscribe';
+import Title from '../../../components/Title/Title.styles';
+import { useLibrary } from '../../../contexts/Library';
+import { landingData } from '../../../data';
+import { Button, List, Section } from './FAQ.styles';
 
 export default function FAQ() {
+  const { language } = useLibrary();
+  const { title, questions, emailText } =
+    language === 'en' ? landingData.en.faq : landingData.br.faq;
+
   function toggleText(id) {
-    const textElmts = document.querySelectorAll(".faq-text");
+    const textElmts = document.querySelectorAll('.faq-text');
     let textElmt;
 
     textElmts.forEach((elmt) => {
       if (elmt.id === id) textElmt = elmt;
     });
 
-    textElmt.classList.toggle("active");
+    textElmt.classList.toggle('active');
 
     const iconElmt = textElmt.previousElementSibling.childNodes[1];
-    iconElmt.classList.toggle("active");
+    iconElmt.classList.toggle('active');
   }
 
   return (
     <Section>
-      <Title>{landingData.en.faq.title}</Title>
+      <Title>{title}</Title>
       <List>
-        {landingData.en.faq.questions.map((question, index) => (
+        {questions.map((question, index) => (
           <li key={index}>
             <Button type="button" onClick={() => toggleText(index.toString())}>
               {question.title}
@@ -44,7 +49,7 @@ export default function FAQ() {
       </List>
 
       <div className="subscribe-wrapper">
-        <Subscribe text={landingData.en.faq.emailText} />
+        <Subscribe text={emailText} />
       </div>
     </Section>
   );

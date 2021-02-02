@@ -1,6 +1,6 @@
-import styled from "styled-components/macro";
-import { vars } from "../../helpers/styles/variables";
-import { media } from "../../helpers/styles/mixins";
+import styled from 'styled-components/macro';
+import { vars } from '../../helpers/styles/variables';
+import { media } from '../../helpers/styles/mixins';
 
 export const Container = styled.footer`
   max-width: 75rem;
@@ -21,7 +21,7 @@ export const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
-  ${media("tablet")} {
+  ${media('tablet')} {
     grid-template-columns: repeat(4, 1fr);
   }
 
@@ -39,19 +39,21 @@ export const Select = styled.div`
   position: relative;
 
   &::before {
-    content: "🌐";
+    content: '🌐';
     position: absolute;
     top: 1rem;
     left: 1rem;
     filter: grayscale(1) contrast(2);
+    pointer-events: none;
   }
 
   &::after {
-    content: "▼";
+    content: '▼';
     position: absolute;
     top: 1rem;
     left: 8.7rem;
     transform: scaleX(1.5) scale(0.6);
+    pointer-events: none;
   }
 
   select {

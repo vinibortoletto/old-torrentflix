@@ -1,9 +1,8 @@
-import styled from "styled-components";
-import { vars } from "../../helpers/styles/variables";
-import { media } from "../../helpers/styles/mixins";
+import styled from 'styled-components';
+import { vars } from '../../helpers/styles/variables';
+import { media } from '../../helpers/styles/mixins';
 
 export const Container = styled.div`
-  /* height: 3.5rem; */
   width: 100%;
   position: relative;
 
@@ -35,10 +34,11 @@ export const Container = styled.div`
       font-size: ${vars.fontSize.small};
       top: 0;
       transform: translateY(0);
+      font-weight: bold;
     }
   }
 
-  ${media("tablet")} {
+  ${media('tablet')} {
     label {
       font-size: 1rem;
     }

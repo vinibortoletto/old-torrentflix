@@ -1,14 +1,18 @@
-import React from "react";
-import { DividingLine } from "../../../components/DividingLine/DividingLine.styles";
-import { landingData } from "../../../data";
-import { Container, Image } from "./OurStory.styles";
-import Title from "../../../components/Title/Title.styles";
-import Subtitle from "../../../components/Subtitle/Subtitle.styles";
+import React from 'react';
+import { DividingLine } from '../../../components/DividingLine/DividingLine.styles';
+import Subtitle from '../../../components/Subtitle/Subtitle.styles';
+import Title from '../../../components/Title/Title.styles';
+import { useLibrary } from '../../../contexts/Library';
+import { landingData } from '../../../data';
+import { Container, Image } from './OurStory.styles';
 
 export default function OurStory() {
+  const { language } = useLibrary();
+  const { ourStory } = language === 'en' ? landingData.en : landingData.br;
+
   return (
     <>
-      {landingData.en.ourStory.map((section, index) => (
+      {ourStory.map((section, index) => (
         <Container key={index}>
           <section className={section.class}>
             <div className="text">

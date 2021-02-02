@@ -1,17 +1,25 @@
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import React from "react";
-import { Button } from "../../components/Button/Button.styles";
-import Input from "../../components/Input/Input";
-import { Container } from "./Subscribe.styles";
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import React from 'react';
+import { Button } from '../Button/Button.styles';
+import Input from '../Input/Input';
+import { useLibrary } from '../../contexts/Library';
+import { Container } from './Subscribe.styles';
 
 export default function Subscribe({ text }) {
+  const { language } = useLibrary();
+
   return (
     <Container>
       <h3>{text}</h3>
       <form>
-        <Input label="Email address" name="email" type="email" required />
+        <Input
+          label={language === 'en' ? 'Email address' : 'Email'}
+          name="email"
+          type="email"
+          required
+        />
         <Button type="submit" big>
-          GET STARTED
+          {language === 'en' ? 'GET STARTED' : 'VAMOS LÁ'}
           <ArrowForwardIosIcon />
         </Button>
       </form>
