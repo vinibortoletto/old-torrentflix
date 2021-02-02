@@ -1,6 +1,6 @@
-import styled from "styled-components/macro";
-import { media } from "../../helpers/styles/mixins";
-import { vars } from "../../helpers/styles/variables";
+import styled from 'styled-components/macro';
+import { media } from '../../helpers/styles/mixins';
+import { vars } from '../../helpers/styles/variables';
 
 export const Container = styled.div`
   max-width: 30rem;
@@ -24,7 +24,7 @@ export const Container = styled.div`
     margin-top: 0.5rem;
   }
 
-  ${media("laptop-s")} {
+  ${media('laptop-s')} {
     max-width: 100%;
 
     h3 {

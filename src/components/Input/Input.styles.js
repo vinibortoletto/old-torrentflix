@@ -12,7 +12,10 @@ export const Container = styled.div`
     padding: 0.6rem;
     padding-top: 1.2rem;
     border-radius: ${vars.borderRadius.small};
-    color: ${vars.color.black};
+    color: ${(props) =>
+      props.dark ? `${vars.color.white}` : `${vars.color.black}`};
+    background-color: ${(props) =>
+      props.dark ? `${vars.color.grey}` : `${vars.color.white}`};
   }
 
   label {
@@ -22,7 +25,8 @@ export const Container = styled.div`
     transform: translateY(-50%);
 
     padding-left: 0.6rem;
-    color: ${vars.color.grey};
+    color: ${(props) =>
+      props.dark ? `${vars.color.lightGrey}` : `${vars.color.grey}`};
 
     pointer-events: none;
     transition: 0.2s ease;

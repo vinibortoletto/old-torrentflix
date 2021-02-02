@@ -1,27 +1,33 @@
-import React from "react";
-import { Container } from "./Input.styles";
+import React from 'react';
+import { Container } from './Input.styles';
 
-export default function Input({ label, name, type, placeholder, required }) {
+export default function Input({
+  label,
+  name,
+  type,
+  required,
+  dark,
+  className,
+}) {
   function animateLabel(e) {
-    const input = e.target;
-    const label = input.parentNode.childNodes[1];
+    const inputElmt = e.target;
+    const labelElmt = inputElmt.parentNode.childNodes[1];
 
-    if (input.value) {
-      return label.classList.add("active");
+    if (inputElmt.value) {
+      labelElmt.classList.add('active');
+    } else {
+      if (e.type === 'focus') labelElmt.classList.add('active');
+      if (e.type === 'blur') labelElmt.classList.remove('active');
     }
-
-    e.type === "focus" && label.classList.add("active");
-    e.type === "blur" && label.classList.remove("active");
   }
 
   return (
-    <Container>
+    <Container dark={dark} className={className}>
       <input
         onFocus={animateLabel}
         onBlur={animateLabel}
         type={type}
         name={name}
-        placeholder={placeholder}
         required={required}
       />
       <label htmlFor={name}>{label}</label>

@@ -5,7 +5,7 @@ import { media } from '../../helpers/styles/mixins';
 export const Container = styled.footer`
   max-width: 75rem;
   margin: auto;
-  color: ${vars.color.grey};
+  color: ${vars.color.lightGrey};
   padding: 4rem ${vars.size.medium} 2rem ${vars.size.medium};
 
   h1 {

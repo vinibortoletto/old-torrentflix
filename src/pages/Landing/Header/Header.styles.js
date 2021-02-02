@@ -3,7 +3,7 @@ import { vars } from '../../../helpers/styles/variables';
 import { media } from '../../../helpers/styles/mixins';
 
 export const Container = styled.header`
-  max-width: 120rem;
+  max-width: 100rem;
   height: 4rem;
 
   display: flex;
@@ -14,7 +14,7 @@ export const Container = styled.header`
 
   button {
     height: 1.7rem;
-    font-size: ${vars.fontSize.small};
+    font-size: 0.9rem;
   }
 
   ${media('tablet')} {

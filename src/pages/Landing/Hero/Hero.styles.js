@@ -1,6 +1,6 @@
-import styled from "styled-components/macro";
-import { media } from "../../../helpers/styles/mixins";
-import { vars } from "../../../helpers/styles/variables";
+import styled from 'styled-components/macro';
+import { media } from '../../../helpers/styles/mixins';
+import { vars } from '../../../helpers/styles/variables';
 
 export const Container = styled.section`
   height: 70vh;
@@ -14,17 +14,17 @@ export const Container = styled.section`
   justify-content: center;
   text-align: center;
 
-  ${media("laptop-s")} {
+  ${media('laptop-s')} {
     max-width: 50rem;
 
     height: calc(100vh - 4.5rem);
   }
 
-  ${media("laptop-l")} {
+  ${media('laptop-l')} {
     height: 70vh;
   }
 
-  ${media("4k")} {
+  ${media('4k')} {
     height: 50vh;
   }
 `;
@@ -43,15 +43,15 @@ export const Background = styled.img`
   filter: contrast(1.3) brightness(0.7);
   object-fit: cover;
 
-  ${media("laptop-s")} {
+  ${media('laptop-s')} {
     height: 100vh;
   }
 
-  ${media("laptop-l")} {
+  ${media('laptop-l')} {
     height: calc(70vh + 4.5rem);
   }
 
-  ${media("4k")} {
+  ${media('4k')} {
     height: calc(50vh + 4.5rem);
   }
 `;

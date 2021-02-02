@@ -1,6 +1,6 @@
-import styled from "styled-components/macro";
-import { vars } from "../../../helpers/styles/variables";
-import { media } from "../../../helpers/styles/mixins";
+import styled from 'styled-components/macro';
+import { vars } from '../../../helpers/styles/variables';
+import { media } from '../../../helpers/styles/mixins';
 
 export const Container = styled.div`
   section {
@@ -11,7 +11,7 @@ export const Container = styled.div`
     margin: auto;
     text-align: center;
 
-    ${media("laptop-s")} {
+    ${media('laptop-s')} {
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;

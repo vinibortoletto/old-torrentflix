@@ -1,6 +1,6 @@
-import styled from "styled-components/macro";
-import { media } from "../../../helpers/styles/mixins";
-import { vars } from "../../../helpers/styles/variables";
+import styled from 'styled-components/macro';
+import { media } from '../../../helpers/styles/mixins';
+import { vars } from '../../../helpers/styles/variables';
 
 export const Section = styled.section`
   padding: 4rem 0;
@@ -15,11 +15,11 @@ export const Section = styled.section`
     max-width: 40rem;
     margin: auto;
 
-    ${media("laptop-s")} {
+    ${media('laptop-s')} {
       max-width: 50rem;
     }
 
-    ${media("4k")} {
+    ${media('4k')} {
       max-width: 70rem;
     }
   }
@@ -34,7 +34,7 @@ export const Button = styled.button`
   align-items: center;
   justify-content: space-between;
 
-  background-color: ${vars.color.lightGrey};
+  background-color: ${vars.color.grey};
 
   svg {
     transition: 0.2s ease;
@@ -44,9 +44,7 @@ export const Button = styled.button`
     }
   }
 
-  ${media("laptop-s")} {
-    font-size: ${vars.fontSize.medium};
-
+  ${media('laptop-s')} {
     svg {
       transform: scale(1.5);
     }
@@ -65,7 +63,7 @@ export const List = styled.ul`
     padding: 0;
     margin: 0;
 
-    background-color: ${vars.color.lightGrey};
+    background-color: ${vars.color.grey};
 
     max-height: 0;
     overflow: hidden;
@@ -85,11 +83,7 @@ export const List = styled.ul`
     }
   }
 
-  ${media("laptop-s")} {
+  ${media('laptop-s')} {
     max-width: 50rem;
-
-    p {
-      font-size: ${vars.fontSize.medium};
-    }
   }
 `;
