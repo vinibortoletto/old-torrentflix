@@ -27,40 +27,42 @@ export default function Footer() {
 
   return (
     <Container>
-      <Title>{title}</Title>
+      <div className="footer-wrapper">
+        <Title>{title}</Title>
 
-      <List>
-        {navLinks.map((link, index) => (
-          <li key={index}>
-            <a href="/">{link}</a>
-          </li>
-        ))}
-      </List>
+        <List>
+          {navLinks.map((link, index) => (
+            <li key={index}>
+              <a href="/">{link}</a>
+            </li>
+          ))}
+        </List>
 
-      <Select>
-        <label htmlFor="language">
-          {language === 'en' ? 'Language' : 'Idioma'}
-        </label>
+        <Select>
+          <label htmlFor="language">
+            {language === 'en' ? 'Language' : 'Idioma'}
+          </label>
 
-        <select
-          onChange={changeLanguage}
-          value={language}
-          name="language"
-          id="language"
-        >
-          <option value="en">English</option>
-          <option value="br">Português</option>
-        </select>
-      </Select>
+          <select
+            onChange={changeLanguage}
+            value={language}
+            name="language"
+            id="language"
+          >
+            <option value="en">English</option>
+            <option value="br">Português</option>
+          </select>
+        </Select>
 
-      <Copyright>
-        <p>{copyright}</p>
-        <p className="strong">
-          {language === 'en'
-            ? `Created by Vinicius Bortoletto`
-            : `Criado por Vinicius Bortoletto`}
-        </p>
-      </Copyright>
+        <Copyright>
+          <p>{copyright}</p>
+          <p className="strong">
+            {language === 'en'
+              ? `Created by Vinicius Bortoletto`
+              : `Criado por Vinicius Bortoletto`}
+          </p>
+        </Copyright>
+      </div>
     </Container>
   );
 }

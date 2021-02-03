@@ -3,13 +3,29 @@ import { vars } from '../../helpers/styles/variables';
 import { media } from '../../helpers/styles/mixins';
 
 export const Container = styled.footer`
-  max-width: 75rem;
-  margin: auto;
   color: ${vars.color.lightGrey};
-  padding: 4rem ${vars.size.medium} 2rem ${vars.size.medium};
+  padding: 4rem 0 2rem 0;
+  margin: 0 -${vars.size.medium};
+
+  .footer-wrapper {
+    max-width: 75rem;
+    margin: auto;
+
+    ${media('tablet')} {
+      padding: 0 ${vars.size.medium};
+    }
+
+    ${media('laptop-l')} {
+      padding: 0;
+    }
+  }
 
   h1 {
     font-weight: normal;
+  }
+
+  ${media('laptop-l')} {
+    margin: 0 -${vars.size.big};
   }
 `;
 

@@ -4,12 +4,15 @@ import { vars } from '../../helpers/styles/variables';
 
 export const Header = styled.header`
   max-width: 120rem;
-
+  height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 1.5rem ${vars.size.small} 0 ${vars.size.small}; */
   margin: auto;
+
+  ${media('tablet')} {
+    height: 6rem;
+  }
 `;
 
 export const Logo = styled.img`
@@ -36,7 +39,10 @@ export const Main = styled.main`
   hr {
     width: 100%;
     height: 1px;
+    position: absolute;
+    left: 0;
     background-color: ${vars.color.lightGrey};
+    /* margin: 0 -10vw; */
 
     ${media('tablet')} {
       display: none;
