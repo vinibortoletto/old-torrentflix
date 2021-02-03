@@ -5,7 +5,6 @@ import { vars } from '../../../helpers/styles/variables';
 export const Container = styled.section`
   height: 80vh;
   max-width: 100%;
-  /* padding: 0 ${vars.size.small}; */
   margin: auto;
 
   display: flex;

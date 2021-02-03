@@ -4,7 +4,7 @@ import { media } from '../../helpers/styles/mixins';
 
 export const Container = styled.footer`
   color: ${vars.color.lightGrey};
-  padding: 4rem 0 2rem 0;
+  padding-top: 4rem;
 
   .footer-wrapper {
     max-width: 75rem;
@@ -23,11 +23,7 @@ export const Container = styled.footer`
     font-weight: normal;
   }
 
-  ${media('tablet')} {
-    margin: 0 -${vars.size.medium};
-  }
-
-  ${media('laptop-l')} {
+  ${media('4k')} {
     margin: 0 -${vars.size.big};
   }
 `;
@@ -36,12 +32,14 @@ export const Title = styled.h1`
   margin-bottom: 1.5rem;
 `;
 
-export const List = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+export const Navigation = styled.nav`
+  ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
-  ${media('tablet')} {
-    grid-template-columns: repeat(4, 1fr);
+    ${media('tablet')} {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   li {

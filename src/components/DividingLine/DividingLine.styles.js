@@ -7,10 +7,7 @@ export const DividingLine = styled.hr`
   background-color: ${vars.color.darkGrey};
   margin: 0 -${vars.size.small};
 
-  ${media('tablet')} {
-    margin: 0 -${vars.size.medium};
-  }
-  ${media('laptop-l')} {
+  ${media('4k')} {
     margin: 0 -${vars.size.big};
   }
 `;

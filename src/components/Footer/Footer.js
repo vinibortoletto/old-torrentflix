@@ -2,7 +2,13 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useLibrary } from '../../contexts/Library';
 import { footerData } from '../../data';
-import { Container, Copyright, List, Select, Title } from './Footer.styles';
+import {
+  Container,
+  Copyright,
+  Navigation,
+  Select,
+  Title,
+} from './Footer.styles';
 
 export default function Footer() {
   const location = useLocation();
@@ -30,13 +36,15 @@ export default function Footer() {
       <div className="footer-wrapper">
         <Title>{title}</Title>
 
-        <List>
-          {navLinks.map((link, index) => (
-            <li key={index}>
-              <a href="/">{link}</a>
-            </li>
-          ))}
-        </List>
+        <Navigation>
+          <ul>
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <a href="/">{link}</a>
+              </li>
+            ))}
+          </ul>
+        </Navigation>
 
         <Select>
           <label htmlFor="language">

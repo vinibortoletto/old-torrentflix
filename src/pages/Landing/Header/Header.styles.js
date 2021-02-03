@@ -9,7 +9,6 @@ export const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 1.5rem ${vars.size.small} 0 ${vars.size.small}; */
   margin: auto;
 
   button {
@@ -26,10 +25,13 @@ export const Container = styled.header`
 `;
 
 export const Logo = styled.img`
-  width: 80%;
-  max-width: 10rem;
+  max-width: 8rem;
 
   ${media('tablet')} {
-    width: 100%;
+    max-width: 10rem;
+  }
+
+  ${media('laptop-s')} {
+    max-width: 12rem;
   }
 `;
