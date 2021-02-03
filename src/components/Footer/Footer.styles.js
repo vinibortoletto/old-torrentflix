@@ -5,7 +5,6 @@ import { media } from '../../helpers/styles/mixins';
 export const Container = styled.footer`
   color: ${vars.color.lightGrey};
   padding: 4rem 0 2rem 0;
-  margin: 0 -${vars.size.medium};
 
   .footer-wrapper {
     max-width: 75rem;
@@ -22,6 +21,10 @@ export const Container = styled.footer`
 
   h1 {
     font-weight: normal;
+  }
+
+  ${media('tablet')} {
+    margin: 0 -${vars.size.medium};
   }
 
   ${media('laptop-l')} {
