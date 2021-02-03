@@ -7,7 +7,9 @@ export const Container = styled.div`
     width: 100%;
     max-width: 83rem;
 
-    padding: 4rem ${vars.size.small};
+    /* padding: 4rem ${vars.size.small}; */
+    padding: 4rem 0;
+
     margin: auto;
     text-align: center;
 

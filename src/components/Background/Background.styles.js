@@ -3,7 +3,7 @@ import { media } from '../../helpers/styles/mixins';
 import { vars } from '../../helpers/styles/variables';
 
 export const Image = styled.img`
-  height: ${(props) => (props.hero ? 'calc(70vh + 4.5rem)' : '100%')};
+  height: ${(props) => (props.hero ? 'calc(80vh + 4.5rem)' : '100%')};
   width: 100%;
 
   position: absolute;
@@ -17,14 +17,14 @@ export const Image = styled.img`
   object-fit: cover;
 
   ${media('laptop-s')} {
-    height: 100vh;
+    /* height: ${(props) => props.hero && '100vh'}; */
   }
 
   ${media('laptop-l')} {
-    height: calc(70vh + 4.5rem);
+    height: ${(props) => props.hero && 'calc(70vh + 4.5rem)'};
   }
 
   ${media('4k')} {
-    height: calc(50vh + 4.5rem);
+    height: ${(props) => props.hero && 'calc(50vh + 4.5rem)'};
   }
 `;

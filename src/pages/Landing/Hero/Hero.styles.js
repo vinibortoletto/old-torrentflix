@@ -3,9 +3,9 @@ import { media } from '../../../helpers/styles/mixins';
 import { vars } from '../../../helpers/styles/variables';
 
 export const Container = styled.section`
-  height: 70vh;
-  max-width: 37rem;
-  padding: 0 ${vars.size.small};
+  height: 80vh;
+  max-width: 100%;
+  /* padding: 0 ${vars.size.small}; */
   margin: auto;
 
   display: flex;
@@ -14,10 +14,19 @@ export const Container = styled.section`
   justify-content: center;
   text-align: center;
 
-  ${media('laptop-s')} {
-    max-width: 50rem;
+  .subscribe-wrapper {
+    margin-top: -1rem;
+  }
 
-    height: calc(100vh - 4.5rem);
+  ${media('tablet')} {
+    .text-wrapper {
+      width: 37rem;
+      margin: auto;
+    }
+
+    .subscribe-wrapper {
+      width: 45rem;
+    }
   }
 
   ${media('laptop-l')} {

@@ -8,7 +8,7 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem ${vars.size.small} 0 ${vars.size.small};
+  /* padding: 1.5rem ${vars.size.small} 0 ${vars.size.small}; */
   margin: auto;
 `;
 
@@ -22,10 +22,11 @@ export const Logo = styled.img`
 
 export const Main = styled.main`
   margin-bottom: 6rem;
+  padding: 0 ${vars.size.small};
 
   h1 {
     margin: 1rem 0 2rem 0;
-    padding: 0 ${vars.size.small};
+    /* padding: 0 ${vars.size.small}; */
 
     ${media('tablet')} {
       font-size: ${vars.fontSize.medium};
@@ -55,7 +56,6 @@ export const Main = styled.main`
 export const Facebook = styled.div`
   display: flex;
   align-items: center;
-  padding: 0 ${vars.size.small};
   margin-bottom: 1rem;
 
   img {
@@ -70,7 +70,6 @@ export const Facebook = styled.div`
 `;
 
 export const Signup = styled.div`
-  padding: 0 ${vars.size.small};
   margin-bottom: 7rem;
 
   p {

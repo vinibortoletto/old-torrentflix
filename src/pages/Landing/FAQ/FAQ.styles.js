@@ -4,6 +4,7 @@ import { vars } from '../../../helpers/styles/variables';
 
 export const Section = styled.section`
   padding: 4rem 0;
+  margin: 0 -${vars.size.small};
 
   h1 {
     text-align: center;
@@ -11,16 +12,13 @@ export const Section = styled.section`
   }
 
   .subscribe-wrapper {
-    padding: 0 ${vars.size.small};
     max-width: 40rem;
     margin: auto;
+    margin-top: 3rem;
+    padding: 0 ${vars.size.small};
 
-    ${media('laptop-s')} {
-      max-width: 50rem;
-    }
-
-    ${media('4k')} {
-      max-width: 70rem;
+    ${media('tablet')} {
+      padding: 0;
     }
   }
 `;
@@ -81,9 +79,5 @@ export const List = styled.ul`
     &:nth-child(2) {
       padding-top: 0;
     }
-  }
-
-  ${media('laptop-s')} {
-    max-width: 50rem;
   }
 `;

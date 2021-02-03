@@ -3,7 +3,7 @@ import { vars } from '../../../helpers/styles/variables';
 import { media } from '../../../helpers/styles/mixins';
 
 export const Form = styled.form`
-  padding: 0 ${vars.size.small};
+  /* padding: 0 ${vars.size.small}; */
   margin-bottom: 2rem;
 
   .input-wrapper {
