@@ -10,7 +10,7 @@ export const Form = styled.form`
     margin-bottom: 1rem;
   }
 
-  button {
+  #button-submit {
     margin-top: 2rem;
     margin-bottom: 1rem;
     padding: 1.5rem;

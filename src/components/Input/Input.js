@@ -1,5 +1,7 @@
-import React from 'react';
-import { Container } from './Input.styles';
+import React, { useState } from 'react';
+import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import { Container, PasswordButton } from './Input.styles';
 
 export default function Input({
   label,
@@ -9,6 +11,17 @@ export default function Input({
   dark,
   className,
 }) {
+  const [showPassword, setShowPassword] = useState(false);
+
+  function togglePassword(e) {
+    const inputElmt = e.target.previousSibling.previousSibling;
+
+    if (inputElmt.type === 'password') inputElmt.type = 'text';
+    else inputElmt.type = 'password';
+
+    setShowPassword(!showPassword);
+  }
+
   function animateLabel(e) {
     const inputElmt = e.target;
     const labelElmt = inputElmt.parentNode.childNodes[1];
@@ -31,6 +44,11 @@ export default function Input({
         required={required}
       />
       <label htmlFor={name}>{label}</label>
+      {type === 'password' && (
+        <PasswordButton onClick={togglePassword} type="button">
+          {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+        </PasswordButton>
+      )}
     </Container>
   );
 }

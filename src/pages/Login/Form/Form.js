@@ -26,7 +26,7 @@ export default function Login() {
         type="password"
         required
       />
-      <Button big type="submit">
+      <Button id="button-submit" big type="submit">
         {language === 'en' ? 'Sign in' : 'Entrar'}
       </Button>
 

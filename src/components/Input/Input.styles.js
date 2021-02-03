@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { vars } from '../../helpers/styles/variables';
 import { media } from '../../helpers/styles/mixins';
 
@@ -45,5 +45,26 @@ export const Container = styled.div`
     label {
       font-size: 1rem;
     }
+  }
+`;
+
+export const PasswordButton = styled.button`
+  width: 3rem;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+
+  svg {
+    color: ${vars.color.lightGrey};
+    pointer-events: none;
   }
 `;
