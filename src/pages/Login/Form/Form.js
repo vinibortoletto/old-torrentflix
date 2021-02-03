@@ -15,6 +15,7 @@ export default function Login() {
         dark
         label="Email"
         name="email"
+        id="email"
         type="email"
         required
       />
@@ -23,6 +24,7 @@ export default function Login() {
         dark
         label={language === 'en' ? 'Password' : 'Senha'}
         name="password"
+        id="password"
         type="password"
         required
       />

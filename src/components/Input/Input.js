@@ -6,6 +6,7 @@ import { Container, PasswordButton } from './Input.styles';
 export default function Input({
   label,
   name,
+  id,
   type,
   required,
   dark,
@@ -41,6 +42,7 @@ export default function Input({
         onBlur={animateLabel}
         type={type}
         name={name}
+        id={id}
         required={required}
       />
       <label htmlFor={name}>{label}</label>

@@ -15,6 +15,7 @@ export default function Subscribe({ text }) {
         <Input
           label={language === 'en' ? 'Email address' : 'Email'}
           name="email"
+          id="email"
           type="email"
           required
         />

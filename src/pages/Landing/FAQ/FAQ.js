@@ -13,10 +13,15 @@ export default function FAQ() {
 
   function toggleText(id) {
     const textElmts = document.querySelectorAll('.faq-text');
-
+    const buttonElmt = document.getElementById(id);
     textElmts.forEach((elmt) => {
-      if (elmt.id === id) elmt.classList.toggle('active');
-      else elmt.classList.remove('active');
+      if (elmt.id === id) {
+        elmt.classList.toggle('active');
+        buttonElmt.toggleAttribute('aria-expanded');
+      } else {
+        elmt.classList.remove('active');
+        buttonElmt.setAttribute('aria-expanded', 'false');
+      }
     });
   }
 
@@ -26,11 +31,22 @@ export default function FAQ() {
       <List>
         {questions.map((question) => (
           <li key={question.id}>
-            <Button type="button" onClick={() => toggleText(question.id)}>
+            <Button
+              aria-expanded="false"
+              aria-controls={question.id}
+              type="button"
+              id={question.id}
+              onClick={() => toggleText(question.id)}
+            >
               {question.title}
               <AddIcon />
             </Button>
-            <div className="faq-text" id={question.id}>
+            <div
+              className="faq-text"
+              id={question.id}
+              role="region"
+              aria-labelledby={question.id}
+            >
               {Array.isArray(question.answer) ? (
                 question.answer.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
