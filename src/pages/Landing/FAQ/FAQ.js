@@ -13,29 +13,24 @@ export default function FAQ() {
 
   function toggleText(id) {
     const textElmts = document.querySelectorAll('.faq-text');
-    let textElmt;
 
     textElmts.forEach((elmt) => {
-      if (elmt.id === id) textElmt = elmt;
+      if (elmt.id === id) elmt.classList.toggle('active');
+      else elmt.classList.remove('active');
     });
-
-    textElmt.classList.toggle('active');
-
-    const iconElmt = textElmt.previousElementSibling.childNodes[1];
-    iconElmt.classList.toggle('active');
   }
 
   return (
     <Section>
       <Title>{title}</Title>
       <List>
-        {questions.map((question, index) => (
-          <li key={index}>
-            <Button type="button" onClick={() => toggleText(index.toString())}>
+        {questions.map((question) => (
+          <li key={question.id}>
+            <Button type="button" onClick={() => toggleText(question.id)}>
               {question.title}
               <AddIcon />
             </Button>
-            <div className="faq-text" id={index}>
+            <div className="faq-text" id={question.id}>
               {Array.isArray(question.answer) ? (
                 question.answer.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
