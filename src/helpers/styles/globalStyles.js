@@ -22,6 +22,7 @@ export const GlobalStyles = styled.createGlobalStyle`
   }
 
   body {
+    position: relative;
     background-color: ${vars.color.black};
     color: ${vars.color.white};
   }

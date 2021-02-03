@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Title from '../../components/Title/Title.styles';
 import { useLibrary } from '../../contexts/Library';
@@ -6,8 +6,20 @@ import logo from '../../images/misc/logo.png';
 import Form from './Form/Form';
 import { Main, Header, Logo, Facebook, Signup } from './Login.styles';
 
+import Background from '../../components/Background/Background';
+
 export default function Login() {
   const { language } = useLibrary();
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    function getWidth() {
+      setWidth(window.innerWidth);
+    }
+
+    window.addEventListener('resize', getWidth);
+    return () => window.removeEventListener('resize', getWidth);
+  }, []);
 
   return (
     <>
@@ -19,6 +31,9 @@ export default function Login() {
 
       <Main>
         <Title>{language === 'en' ? 'Sign in' : 'Entrar'}</Title>
+
+        {width >= 768 && <Background />}
+
         <Form />
 
         <Facebook>

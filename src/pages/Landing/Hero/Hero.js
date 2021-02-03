@@ -1,11 +1,11 @@
 import React from 'react';
+import Background from '../../../components/Background/Background';
 import Subscribe from '../../../components/Subscribe/Subscribe';
 import Subtitle from '../../../components/Subtitle/Subtitle.styles';
 import Title from '../../../components/Title/Title.styles';
 import { useLibrary } from '../../../contexts/Library';
 import { landingData } from '../../../data';
-import heroImg from '../../../images/misc/hero-bg.jpg';
-import { Background, Container } from './Hero.styles';
+import { Container } from './Hero.styles';
 
 export default function Hero() {
   const { language } = useLibrary();
@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <Container>
       <div>
-        <Background src={heroImg} alt="a display of filmes" />
+        <Background hero />
         <div className="text-wrapper">
           <Title>{title}</Title>
           <Subtitle>{subtitle}</Subtitle>

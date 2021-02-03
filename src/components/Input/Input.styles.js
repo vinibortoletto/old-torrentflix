@@ -9,13 +9,13 @@ export const Container = styled.div`
   input {
     height: 100%;
     width: 100%;
-    padding: 0.6rem;
-    padding-top: 1.2rem;
+    padding: 1.2rem 1rem 0.6rem 1rem;
     border-radius: ${vars.borderRadius.small};
     color: ${(props) =>
       props.dark ? `${vars.color.white}` : `${vars.color.black}`};
     background-color: ${(props) =>
       props.dark ? `${vars.color.grey}` : `${vars.color.white}`};
+    font-size: 1rem;
   }
 
   label {
@@ -24,7 +24,7 @@ export const Container = styled.div`
     top: 50%;
     transform: translateY(-50%);
 
-    padding-left: 0.6rem;
+    padding-left: 1rem;
     color: ${(props) =>
       props.dark ? `${vars.color.lightGrey}` : `${vars.color.grey}`};
 
@@ -38,7 +38,6 @@ export const Container = styled.div`
       font-size: ${vars.fontSize.small};
       top: 0;
       transform: translateY(0);
-      font-weight: bold;
     }
   }
 

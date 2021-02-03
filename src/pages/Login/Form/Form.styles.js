@@ -11,8 +11,12 @@ export const Form = styled.form`
   }
 
   button {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
     width: 100%;
     font-weight: bold;
+    font-size: 1rem;
   }
 `;
 

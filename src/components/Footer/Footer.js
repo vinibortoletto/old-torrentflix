@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useLibrary } from '../../contexts/Library';
 import { footerData } from '../../data';
 import { Container, Copyright, List, Select, Title } from './Footer.styles';
 
 export default function Footer() {
+  const location = useLocation();
   const { language, setLanguage } = useLibrary();
   const { title, navLinks, copyright } =
     language === 'en' ? footerData.en : footerData.br;
@@ -16,6 +18,12 @@ export default function Footer() {
     window.scrollTo(0, 0);
     window.location.reload();
   }
+
+  useEffect(() => {
+    const footerElmt = document.querySelector('footer');
+    if (location.pathname.includes('login'))
+      footerElmt.style.backgroundColor = 'rgba(0,0,0, 0.5)';
+  }, [location]);
 
   return (
     <Container>
