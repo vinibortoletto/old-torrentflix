@@ -2,13 +2,12 @@ import React from 'react';
 import { DividingLine } from '../../../components/DividingLine/DividingLine.styles';
 import Subtitle from '../../../components/Subtitle/Subtitle.styles';
 import Title from '../../../components/Title/Title.styles';
-import { useLibrary } from '../../../contexts/Library';
-import { landingData } from '../../../data';
+import { useData } from '../../../contexts/Data';
 import { Container, Image } from './OurStory.styles';
 
 export default function OurStory() {
-  const { language } = useLibrary();
-  const { ourStory } = language === 'en' ? landingData.en : landingData.br;
+  const { language, data } = useData();
+  const { ourStory } = data;
 
   return (
     <>

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Image } from './Background.styles';
 import img from '../../images/misc/bg.jpg';
-import { useLibrary } from '../../contexts/Library';
+import { useData } from '../../contexts/Data';
 
 export default function Background({ hero }) {
-  const { language } = useLibrary();
+  const { language } = useData();
   return (
     <>
       <Image

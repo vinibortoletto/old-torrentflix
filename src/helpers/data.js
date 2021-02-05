@@ -1,4 +1,4 @@
-export const landingData = {
+export const data = {
   br: {
     hero: {
       title: 'Filmes, séries e muito mais. Sem limites.',
@@ -71,6 +71,30 @@ export const landingData = {
       emailText:
         'Pronto para assistir? Informe seu email para criar ou reiniciar sua assinatura.',
     },
+    footer: {
+      title: 'Dúvidas? Ligue 0800-761-4631',
+      navLinks: [
+        'Perguntas frequentes',
+        'Conta',
+        'Relações com investidores',
+        'Resgatar cartão pré-pago',
+        'Formsa de assistir',
+        'Privadidade',
+        'Informações corporativas',
+        'Teste de velocidade',
+        'Originais Netflix',
+        'Centro de ajura',
+        'Imprensa',
+        'Carreiras',
+        'Comprar cartão pré-pago',
+        'Termos de uso',
+        'Preferências de cookies',
+        'Entre em contato',
+        'Avisos legais',
+      ],
+      copyright: `Este clone-app foi criado apenas para estudo. Direitos de imagem
+        reservados a Netflix.`,
+    },
   },
   en: {
     hero: {
@@ -141,56 +165,29 @@ export const landingData = {
       emailText:
         'Ready to watch? Enter your email to create or restart your membership.',
     },
-  },
-};
-
-export const footerData = {
-  br: {
-    title: 'Dúvidas? Ligue 0800-761-4631',
-    navLinks: [
-      'Perguntas frequentes',
-      'Conta',
-      'Relações com investidores',
-      'Resgatar cartão pré-pago',
-      'Formsa de assistir',
-      'Privadidade',
-      'Informações corporativas',
-      'Teste de velocidade',
-      'Originais Netflix',
-      'Centro de ajura',
-      'Imprensa',
-      'Carreiras',
-      'Comprar cartão pré-pago',
-      'Termos de uso',
-      'Preferências de cookies',
-      'Entre em contato',
-      'Avisos legais',
-    ],
-    copyright: `Este clone-app foi criado apenas para estudo. Direitos de imagem
-    reservados a Netflix.`,
-  },
-  en: {
-    title: 'Questions? Call 0800-761-4632',
-    navLinks: [
-      'FAQ',
-      'Account',
-      'Investor Relations',
-      'Redeem Gift Cards',
-      'Ways to Watch',
-      'Privacy',
-      'Corporate Information',
-      'Speed Test',
-      'Netflix Originals',
-      'Help Center',
-      'Media Center',
-      'Jobs',
-      'Buy Gift Cards',
-      'Terms of Use',
-      'Cookie Preferences',
-      'Contact Us',
-      'Legal Notices',
-    ],
-    copyright: `This clone-app was created for study only. Image rights reserved
-    to Netflix`,
+    footer: {
+      title: 'Questions? Call 0800-761-4632',
+      navLinks: [
+        'FAQ',
+        'Account',
+        'Investor Relations',
+        'Redeem Gift Cards',
+        'Ways to Watch',
+        'Privacy',
+        'Corporate Information',
+        'Speed Test',
+        'Netflix Originals',
+        'Help Center',
+        'Media Center',
+        'Jobs',
+        'Buy Gift Cards',
+        'Terms of Use',
+        'Cookie Preferences',
+        'Contact Us',
+        'Legal Notices',
+      ],
+      copyright: `This clone-app was created for study only. Image rights reserved
+        to Netflix`,
+    },
   },
 };

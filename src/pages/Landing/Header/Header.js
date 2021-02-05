@@ -4,10 +4,10 @@ import { Container, Logo } from './Header.styles';
 import { Button } from '../../../components/Button/Button.styles';
 
 import logo from '../../../images/misc/logo.png';
-import { useLibrary } from '../../../contexts/Library';
+import { useData } from '../../../contexts/Data';
 
 export default function Header() {
-  const { language } = useLibrary();
+  const { language } = useData();
 
   return (
     <Container>

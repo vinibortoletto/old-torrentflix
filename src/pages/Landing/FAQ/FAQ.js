@@ -2,14 +2,12 @@ import AddIcon from '@material-ui/icons/Add';
 import React from 'react';
 import Subscribe from '../../../components/Subscribe/Subscribe';
 import Title from '../../../components/Title/Title.styles';
-import { useLibrary } from '../../../contexts/Library';
-import { landingData } from '../../../data';
+import { useData } from '../../../contexts/Data';
 import { Button, List, Section } from './FAQ.styles';
 
 export default function FAQ() {
-  const { language } = useLibrary();
-  const { title, questions, emailText } =
-    language === 'en' ? landingData.en.faq : landingData.br.faq;
+  const { data } = useData();
+  const { title, questions, emailText } = data.faq;
 
   function toggleText(id) {
     const textElmts = document.querySelectorAll('.faq-text');

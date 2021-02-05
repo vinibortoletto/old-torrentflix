@@ -3,14 +3,12 @@ import Background from '../../../components/Background/Background';
 import Subscribe from '../../../components/Subscribe/Subscribe';
 import Subtitle from '../../../components/Subtitle/Subtitle.styles';
 import Title from '../../../components/Title/Title.styles';
-import { useLibrary } from '../../../contexts/Library';
-import { landingData } from '../../../data';
+import { useData } from '../../../contexts/Data';
 import { Container } from './Hero.styles';
 
 export default function Hero() {
-  const { language } = useLibrary();
-  const { title, subtitle, emailText } =
-    language === 'en' ? landingData.en.hero : landingData.br.hero;
+  const { language, data } = useData();
+  const { title, subtitle, emailText } = data.hero;
 
   return (
     <Container>

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useLibrary } from '../../contexts/Library';
-import { footerData } from '../../data';
+import { useData } from '../../contexts/Data';
 import {
   Container,
   Copyright,
@@ -12,9 +11,8 @@ import {
 
 export default function Footer() {
   const location = useLocation();
-  const { language, setLanguage } = useLibrary();
-  const { title, navLinks, copyright } =
-    language === 'en' ? footerData.en : footerData.br;
+  const { language, setLanguage, data } = useData();
+  const { title, navLinks, copyright } = data.footer;
 
   function changeLanguage() {
     const selectElmt = document.getElementById('language');
