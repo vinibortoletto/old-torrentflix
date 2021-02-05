@@ -11,6 +11,7 @@ export default function Input({
   required,
   dark,
   className,
+  inputRef,
 }) {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -44,6 +45,7 @@ export default function Input({
         name={name}
         id={id}
         required={required}
+        ref={inputRef}
       />
       <label htmlFor={name}>{label}</label>
       {type === 'password' && (

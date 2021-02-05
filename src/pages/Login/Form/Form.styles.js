@@ -3,7 +3,6 @@ import { vars } from '../../../helpers/styles/variables';
 import { media } from '../../../helpers/styles/mixins';
 
 export const Form = styled.form`
-  /* padding: 0 ${vars.size.small}; */
   margin-bottom: 2rem;
 
   .input-wrapper {
@@ -64,4 +63,11 @@ export const Helper = styled.div`
       pointer-events: none;
     }
   }
+`;
+
+export const ErrorMessage = styled.div`
+  background-color: ${vars.color.warning};
+  padding: 1rem 0.6rem;
+  border-radius: ${vars.borderRadius.small};
+  margin-bottom: 1rem;
 `;
