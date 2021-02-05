@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Background from '../../components/Background/Background';
 import Title from '../../components/Title/Title.styles';
-import { useLibrary } from '../../contexts/Library';
+import { useData } from '../../contexts/Data';
 import logo from '../../images/misc/logo.png';
 import Form from './Form/Form';
-import { Main, Header, Logo, Facebook, Signup } from './Login.styles';
-
-import Background from '../../components/Background/Background';
+import { Facebook, Header, Logo, Main, Signup } from './Login.styles';
 
 export default function Login() {
-  const { language } = useLibrary();
+  const { language } = useData();
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
