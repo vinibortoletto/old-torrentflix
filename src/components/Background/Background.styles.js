@@ -16,8 +16,8 @@ export const Image = styled.img`
   filter: contrast(1.1);
   object-fit: cover;
 
-  ${media('laptop-s')} {
-    /* height: ${(props) => props.hero && '100vh'}; */
+  ${media('tablet')} {
+    height: ${(props) => props.hero && '100vh'};
   }
 
   ${media('laptop-l')} {

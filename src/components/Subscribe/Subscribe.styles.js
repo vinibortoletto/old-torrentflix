@@ -20,6 +20,10 @@ export const Container = styled.div`
     margin-bottom: 1rem;
   }
 
+  a:hover {
+    text-decoration: none;
+  }
+
   button {
     margin-top: 0.5rem;
   }

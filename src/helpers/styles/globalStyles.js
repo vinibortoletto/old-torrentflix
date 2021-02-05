@@ -25,7 +25,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     position: relative;
     background-color: ${vars.color.black};
     color: ${vars.color.white};
-    padding: 1.5rem ${vars.size.small};
+    padding: 1.5rem ${vars.size.small} 0 ${vars.size.small};
 
     ${media('4k')} {
       padding: 1.5rem ${vars.size.big};

@@ -4,7 +4,7 @@ import { media } from '../../helpers/styles/mixins';
 
 export const Container = styled.footer`
   color: ${vars.color.lightGrey};
-  padding-top: 4rem;
+  padding: 4rem 0 2rem 0;
 
   .footer-wrapper {
     max-width: 75rem;
@@ -21,6 +21,10 @@ export const Container = styled.footer`
 
   h1 {
     font-weight: normal;
+  }
+
+  ${media('tablet')} {
+    margin: 0 -${vars.size.small};
   }
 
   ${media('4k')} {

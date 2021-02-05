@@ -18,6 +18,8 @@ export const Container = styled.section`
   }
 
   ${media('tablet')} {
+    height: calc(100vh - 5.5rem);
+
     .text-wrapper {
       width: 37rem;
       margin: auto;
