@@ -1,38 +1,35 @@
-import React, { useState, useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import Input from '../../components/Input/Input';
-import { useData } from '../../contexts/Data';
-import { Button } from '../../components/Button/Button.styles';
-import {} from './Signup.styles';
-import { useAuth } from '../../contexts/Auth';
+import React from 'react';
+import Header from '../../components/Header/Header';
+import devicesImg from '../../images/misc/devices.png';
+import { Main, Devices, Text, Button } from './Signup.styles';
 
 export default function Login() {
-  const { language } = useData();
+  return (
+    <>
+      <Header signup />
 
-  const { currentUser, login } = useAuth();
-  const history = useHistory();
-  const [error, setError] = useState('');
+      <Main>
+        <div>
+          <Devices
+            src={devicesImg}
+            alt="drawing of a laptop, monitor, tablet and mobile phone"
+          />
+          <Text>
+            <h2>
+              STEP <span>1</span> OF <span>3</span>
+            </h2>
+            <h1>Finish setting up your account</h1>
+            <p>
+              Netflix is personalized for you. Create a password to watch
+              Netflix on any device at any time.
+            </p>
+          </Text>
 
-  const emailRef = useRef();
-  const passwordRef = useRef();
-
-  async function loginToWebsite(e) {
-    e.preventDefault();
-
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
-
-    try {
-      setError('');
-      // add loading ?
-      await login(email, password);
-      history.push('/');
-    } catch (err) {
-      // const errorCode =
-      setError('Failed to log in.');
-      console.log(JSON.parse(err.message));
-    }
-  }
-
-  return <div>signup</div>;
+          <Button big type="button">
+            CONTINUE
+          </Button>
+        </div>
+      </Main>
+    </>
+  );
 }

@@ -11,7 +11,7 @@ export const Button = styled.button`
   justify-content: center;
 
   padding: ${(props) => props.small && '0.25rem .5rem'};
-  padding: ${(props) => props.big && '0.25rem 1rem'};
+  padding: ${(props) => props.big && '1.5rem 1rem'};
 
   background-color: ${vars.color.red};
   border-radius: ${vars.borderRadius.small};
@@ -22,6 +22,6 @@ export const Button = styled.button`
   }
 
   ${media('tablet')} {
-    padding: 0.25rem 1rem;
+    padding: 0.5rem 1rem;
   }
 `;

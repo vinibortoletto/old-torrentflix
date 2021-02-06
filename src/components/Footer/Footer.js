@@ -8,6 +8,7 @@ import {
   Select,
   Title,
 } from './Footer.styles';
+import { vars } from '../../helpers/styles/variables';
 
 export default function Footer() {
   const location = useLocation();
@@ -24,9 +25,12 @@ export default function Footer() {
   }
 
   useEffect(() => {
+    // Change footer background color
     const footerElmt = document.querySelector('footer');
     if (location.pathname.includes('login'))
       footerElmt.style.backgroundColor = 'rgba(0,0,0, 0.5)';
+    if (location.pathname.includes('signup'))
+      footerElmt.style.backgroundColor = 'rgba(0,0,0, 0.05)';
   }, [location]);
 
   return (

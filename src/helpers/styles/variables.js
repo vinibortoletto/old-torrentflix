@@ -4,7 +4,7 @@ export const vars = {
     darkGrey: '#141414',
     grey: '#303030',
     lightGrey: '#757575',
-    white: '#f2f2f2',
+    white: '#ffffff',
     red: '#E50914',
     warning: '#e87c03',
   },
