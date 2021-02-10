@@ -3,13 +3,15 @@ import { Link, useHistory } from 'react-router-dom';
 import Input from '../../../components/Input/Input';
 import { useData } from '../../../contexts/Data';
 import { Button } from '../../../components/Button/Button.styles';
-import { Form, Helper, ErrorMessage } from './Form.styles';
+import { Form, Helper } from './Form.styles';
 import { useAuth } from '../../../contexts/Auth';
+import Loading from '../../../components/Loading/Loading';
+import { ErrorMessage } from '../../../components/ErrorMessage/ErrorMessage.styles';
 
 export default function Login() {
-  const { language } = useData();
+  const { language, data } = useData();
 
-  const { currentUser, login } = useAuth();
+  const { currentUser, login, loading, setLoading } = useAuth();
   const history = useHistory();
   const [error, setError] = useState('');
 
@@ -21,22 +23,30 @@ export default function Login() {
 
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
+    const btnElmt = document.getElementById('button-submit');
 
     try {
       setError('');
-      // add loading ?
+      setLoading(true);
+      btnElmt.setAttribute('disabled', '');
       await login(email, password);
-      history.push('/');
+
+      setTimeout(() => {
+        localStorage.removeItem('email');
+        history.push('/');
+      }, 2000);
     } catch (err) {
-      // const errorCode =
-      setError('Failed to log in.');
-      console.log(JSON.parse(err.message));
+      if (err.code.includes('user-not-found')) setError(data.error.email);
+      if (err.code.includes('wrong-password')) setError(data.error.password);
+    } finally {
+      setLoading(false);
+      btnElmt.removeAttribute('disabled');
     }
   }
 
   return (
     <Form onSubmit={loginToWebsite}>
-      {error && <ErrorMessage className="error-message">{error}</ErrorMessage>}
+      {error && <ErrorMessage>{error}</ErrorMessage>}
 
       <Input
         className="input-wrapper"
@@ -59,7 +69,9 @@ export default function Login() {
         inputRef={passwordRef}
       />
       <Button id="button-submit" big type="submit">
-        {language === 'en' ? 'Sign in' : 'Entrar'}
+        {loading && <Loading />}
+        {language === 'en' && !loading && 'Sign in'}
+        {language === 'br' && !loading && 'Entrar'}
       </Button>
 
       <Helper>

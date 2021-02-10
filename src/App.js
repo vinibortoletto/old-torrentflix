@@ -9,6 +9,7 @@ import { vars } from './helpers/styles/variables';
 import Landing from './pages/Landing/Landing';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
+// import CreatePassword from './pages/Signup/CreatePassword/CreatePassword';
 
 export default function App() {
   const location = useLocation();
@@ -31,7 +32,9 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/login" component={Login} />
+
         <Route path="/signup" component={Signup} />
+        {/* <Route path={`${match.path}/create-password`} component={CreatePassword} /> */}
       </Switch>
 
       <Footer />

@@ -4,7 +4,8 @@ import { media } from '../../helpers/styles/mixins';
 
 export const Container = styled.footer`
   color: ${vars.color.lightGrey};
-  padding: 4rem 0 2rem 0;
+  padding: 4rem 5vw 2rem 5vw;
+  margin: 0 -${vars.size.small};
 
   .footer-wrapper {
     max-width: 75rem;
@@ -78,7 +79,6 @@ export const Select = styled.div`
   }
 
   select {
-    background-color: ${vars.color.black};
     padding: 1rem 2rem 1rem 3rem;
     border: 1px solid rgba(117, 117, 117, 0.3);
     border-radius: ${vars.borderRadius.small};

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Background from '../../components/Background/Background';
 import Title from '../../components/Title/Title.styles';
+import { useAuth } from '../../contexts/Auth';
 import { useData } from '../../contexts/Data';
 import logo from '../../images/misc/logo.png';
 import Form from './Form/Form';

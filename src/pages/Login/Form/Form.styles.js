@@ -64,10 +64,3 @@ export const Helper = styled.div`
     }
   }
 `;
-
-export const ErrorMessage = styled.div`
-  background-color: ${vars.color.warning};
-  padding: 1rem 0.6rem;
-  border-radius: ${vars.borderRadius.small};
-  margin-bottom: 1rem;
-`;

@@ -24,4 +24,8 @@ export const Button = styled.button`
   ${media('tablet')} {
     padding: 0.5rem 1rem;
   }
+
+  &:disabled {
+    opacity: 0.5;
+  }
 `;

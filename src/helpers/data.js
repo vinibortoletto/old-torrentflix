@@ -95,6 +95,11 @@ export const data = {
       copyright: `Este clone-app foi criado apenas para estudo. Direitos de imagem
         reservados a Netflix.`,
     },
+    error: {
+      password: `Senha inválida. Tente novamente ou crie uma nova senha.`,
+      email: `Email inválido. Tente novamente ou crie uma conta.`,
+      somethingWrong: `Oops. Algo deu errado. Tente novamente`,
+    },
   },
   en: {
     hero: {
@@ -188,6 +193,11 @@ export const data = {
       ],
       copyright: `This clone-app was created for study only. Image rights reserved
         to Netflix`,
+    },
+    error: {
+      password: `Invalid password. Try again or reset your password.`,
+      email: `Invalid email. Try again or create a new account.`,
+      somethingWrong: `Oops. Something went wrong. Try again`,
     },
   },
 };

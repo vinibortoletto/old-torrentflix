@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import { Container, PasswordButton } from './Input.styles';
@@ -12,6 +12,8 @@ export default function Input({
   dark,
   className,
   inputRef,
+  value,
+  onChange,
 }) {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -46,6 +48,8 @@ export default function Input({
         id={id}
         required={required}
         ref={inputRef}
+        value={value}
+        onChange={onChange}
       />
       <label htmlFor={name}>{label}</label>
       {type === 'password' && (

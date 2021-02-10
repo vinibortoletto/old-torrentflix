@@ -36,6 +36,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    background-color: transparent;
   }
 
   label[for='language'] {

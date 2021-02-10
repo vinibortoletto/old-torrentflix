@@ -4,38 +4,31 @@ import { media } from '../../helpers/styles/mixins';
 import { Button as BaseButton } from '../../components/Button/Button.styles';
 
 export const Main = styled.main`
-  padding: 9rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 7rem 5vw;
   color: ${vars.color.black};
-  margin: 0 -${vars.size.small};
 
-  div {
+  .content-wrapper {
     margin: auto;
     max-width: 21rem;
   }
-`;
 
-export const Devices = styled.img`
-  width: 16.25rem;
-  margin-bottom: 2rem;
-`;
-
-export const Text = styled.div`
-  h2 {
-    font-size: ${vars.fontSize.small};
-    text-transform: uppercase;
-    font-weight: normal;
+  .input-wrapper {
     margin-bottom: 0.5rem;
 
-    span {
-      font-weight: bold;
-      font-size: inherit;
+    input {
+      border: 1px solid ${vars.color.lightGrey};
     }
   }
 
-  h1 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
+  /* Password error  */
+  input.error {
+    border: 1px solid ${vars.color.red};
+  }
+
+  .password-error p {
+    color: ${vars.color.red};
+    font-size: ${vars.fontSize.small};
+    text-align: right;
   }
 `;
 
@@ -44,4 +37,21 @@ export const Button = styled(BaseButton)`
 
   width: 100%;
   color: ${vars.color.white};
+`;
+
+export const Devices = styled.img`
+  width: 16.25rem;
+  margin-bottom: 2rem;
+`;
+
+export const Text = styled.div`
+  h1 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-weight: normal;
+    margin-bottom: 1rem;
+  }
 `;

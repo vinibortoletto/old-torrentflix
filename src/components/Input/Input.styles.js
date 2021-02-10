@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 import { vars } from '../../helpers/styles/variables';
 import { media } from '../../helpers/styles/mixins';
 
@@ -11,11 +11,17 @@ export const Container = styled.div`
     width: 100%;
     padding: 1.2rem 1rem 0.6rem 1rem;
     border-radius: ${vars.borderRadius.small};
-    color: ${(props) =>
-      props.dark ? `${vars.color.white}` : `${vars.color.black}`};
-    background-color: ${(props) =>
-      props.dark ? `${vars.color.grey}` : `${vars.color.white}`};
     font-size: 1rem;
+    color: ${vars.color.black};
+    background-color: ${vars.color.white};
+
+    /* Dark input */
+    ${(props) =>
+      props.dark &&
+      css`
+        color: ${vars.color.white};
+        background-color: ${vars.color.grey};
+      `}
   }
 
   label {
@@ -25,8 +31,7 @@ export const Container = styled.div`
     transform: translateY(-50%);
 
     padding-left: 1rem;
-    color: ${(props) =>
-      props.dark ? `${vars.color.lightGrey}` : `${vars.color.grey}`};
+    color: ${vars.color.lightGrey};
 
     pointer-events: none;
     transition: 0.2s ease;
@@ -36,6 +41,7 @@ export const Container = styled.div`
     &.active {
       padding-top: 0.2rem;
       font-size: ${vars.fontSize.small};
+      font-weight: bold;
       top: 0;
       transform: translateY(0);
     }
