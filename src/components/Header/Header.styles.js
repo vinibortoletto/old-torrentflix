@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components/macro';
 import { vars } from '../../helpers/styles/variables';
 import { media } from '../../helpers/styles/mixins';
-import { Button as BaseButton } from '../Button/Button.styles';
 
 export const Container = styled.header`
   max-width: 100rem;
@@ -11,7 +10,7 @@ export const Container = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  /* Sign up page */
+  /* Sign up header */
   ${(props) =>
     props.signup &&
     css`
@@ -20,6 +19,10 @@ export const Container = styled.header`
       padding-left: 0.5rem;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     `}
+
+  ${media('tablet')} {
+    height: ${(props) => props.signup && '6rem'};
+  }
 `;
 
 export const Logo = styled.img`
@@ -27,9 +30,20 @@ export const Logo = styled.img`
 
   ${media('tablet')} {
     max-width: 10rem;
+
+    /* Login header */
+    ${(props) =>
+      props.login &&
+      css`
+        max-width: 16rem;
+        margin: -1.5rem 0 0 -1.5rem;
+      `}
+
+    /* Signup header */
+    max-width: ${(props) => props.signup && '16rem'};
   }
 
   ${media('laptop-s')} {
-    max-width: 12rem;
+    max-width: ${(props) => !props.login && !props.signup && '12rem'};
   }
 `;

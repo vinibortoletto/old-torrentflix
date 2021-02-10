@@ -2,26 +2,26 @@ import styled from 'styled-components/macro';
 import { media } from '../../helpers/styles/mixins';
 import { vars } from '../../helpers/styles/variables';
 
-export const Header = styled.header`
-  max-width: 120rem;
-  height: 4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: auto;
+// export const Header = styled.header`
+//   max-width: 120rem;
+//   height: 4rem;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin: auto;
 
-  ${media('tablet')} {
-    height: 6rem;
-  }
-`;
+//   ${media('tablet')} {
+//     height: 6rem;
+//   }
+// `;
 
-export const Logo = styled.img`
-  max-width: 8rem;
+// export const Logo = styled.img`
+//   max-width: 8rem;
 
-  ${media('tablet')} {
-    max-width: 16rem;
-  }
-`;
+//   ${media('tablet')} {
+//     max-width: 16rem;
+//   }
+// `;
 
 export const Main = styled.main`
   margin-bottom: 6rem;
@@ -29,7 +29,6 @@ export const Main = styled.main`
 
   h1 {
     margin: 1rem 0 2rem 0;
-    /* padding: 0 ${vars.size.small}; */
 
     ${media('tablet')} {
       font-size: ${vars.fontSize.medium};
@@ -42,7 +41,6 @@ export const Main = styled.main`
     position: absolute;
     left: 0;
     background-color: ${vars.color.lightGrey};
-    /* margin: 0 -10vw; */
 
     ${media('tablet')} {
       display: none;

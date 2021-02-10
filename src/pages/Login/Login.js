@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Background from '../../components/Background/Background';
 import Title from '../../components/Title/Title.styles';
+import Header from '../../components/Header/Header';
 import { useAuth } from '../../contexts/Auth';
 import { useData } from '../../contexts/Data';
 import logo from '../../images/misc/logo.png';
 import Form from './Form/Form';
-import { Facebook, Header, Logo, Main, Signup } from './Login.styles';
+import { Facebook, Logo, Main, Signup } from './Login.styles';
 
 export default function Login() {
   const { language } = useData();
@@ -23,11 +24,12 @@ export default function Login() {
 
   return (
     <>
-      <Header>
+      <Header login />
+      {/* <Header>
         <Link to="/">
           <Logo src={logo} alt="torrentflix logo" />
         </Link>
-      </Header>
+      </Header> */}
 
       <Main>
         <Title>{language === 'en' ? 'Sign in' : 'Entrar'}</Title>

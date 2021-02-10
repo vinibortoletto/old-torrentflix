@@ -28,7 +28,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     padding: 1.5rem ${vars.size.small} 0 ${vars.size.small};
 
     ${media('4k')} {
-      padding: 1.5rem ${vars.size.big};
+      padding: 1.5rem ${vars.size.big} 0 ${vars.size.big};
     }
   }
 
