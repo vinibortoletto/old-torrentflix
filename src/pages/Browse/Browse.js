@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import Header from '../../components/Header/Header';
+import Spotlight from './Spotlight/Spotlight';
+import Row from './Row/Row';
 
 export default function Browse() {
-  const location = useLocation();
-
   return (
     <>
       <Header />
-      <main />
+
+      <main>
+        <Spotlight />
+        <Row />
+      </main>
     </>
   );
 }
