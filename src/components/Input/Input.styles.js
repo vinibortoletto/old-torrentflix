@@ -41,7 +41,6 @@ export const Container = styled.div`
     &.active {
       padding-top: 0.2rem;
       font-size: ${vars.fontSize.small};
-      font-weight: bold;
       top: 0;
       transform: translateY(0);
     }

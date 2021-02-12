@@ -15,6 +15,7 @@ export const Button = styled.button`
 
   background-color: ${vars.color.red};
   border-radius: ${vars.borderRadius.small};
+  color: ${vars.color.white};
 
   svg {
     width: 0.8rem;

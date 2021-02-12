@@ -48,6 +48,7 @@ export const Text = styled.div`
   h1 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
+    font-weight: bold;
   }
 
   h2 {

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
+
 // Components
 import Footer from './components/Footer/Footer';
 // Styles

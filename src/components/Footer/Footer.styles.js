@@ -68,6 +68,7 @@ export const Select = styled.div`
     padding: 1rem 2rem 1rem 3rem;
     border: 1px solid rgba(117, 117, 117, 0.3);
     border-radius: ${vars.borderRadius.small};
+    color: ${vars.color.lightGrey};
   }
 `;
 

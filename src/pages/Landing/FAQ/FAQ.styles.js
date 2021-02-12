@@ -32,6 +32,7 @@ export const Button = styled.button`
   justify-content: space-between;
 
   background-color: ${vars.color.grey};
+  color: ${vars.color.white};
 
   svg {
     transition: 0.2s ease;

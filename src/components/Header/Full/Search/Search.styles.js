@@ -13,7 +13,7 @@ export const Form = styled.form`
 
   input {
     height: 2rem;
-
+    font-size: ${vars.fontSize.small};
     padding: 0.5rem;
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid ${vars.color.lightGrey};

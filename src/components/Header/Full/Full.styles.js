@@ -27,4 +27,8 @@ export const Container = styled.header`
       width: 100%;
     }
   }
+
+  ${media('laptop-s')} {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+  }
 `;

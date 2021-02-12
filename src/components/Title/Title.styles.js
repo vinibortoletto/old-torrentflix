@@ -4,6 +4,7 @@ import { vars } from '../../helpers/styles/variables';
 
 const H1 = styled.h1`
   font-size: ${vars.fontSize.medium};
+  font-weight: bold;
   margin-bottom: 0.5rem;
 
   ${media('tablet')} {
