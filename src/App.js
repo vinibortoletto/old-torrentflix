@@ -9,7 +9,7 @@ import { vars } from './helpers/styles/variables';
 import Landing from './pages/Landing/Landing';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
-// import CreatePassword from './pages/Signup/CreatePassword/CreatePassword';
+import Browse from './pages/Browse/Browse';
 
 export default function App() {
   const location = useLocation();
@@ -20,9 +20,15 @@ export default function App() {
 
     if (location.pathname.includes('signup')) {
       bodyElmt.style.backgroundColor = `${vars.color.white}`;
-    } else {
-      bodyElmt.style.backgroundColor = `${vars.color.black}`;
+      return;
     }
+
+    if (location.pathname.includes('browse')) {
+      bodyElmt.style.backgroundColor = `${vars.color.darkGrey}`;
+      return;
+    }
+
+    bodyElmt.style.backgroundColor = `${vars.color.black}`;
   }, [location]);
 
   return (
@@ -32,9 +38,8 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/login" component={Login} />
-
         <Route path="/signup" component={Signup} />
-        {/* <Route path={`${match.path}/create-password`} component={CreatePassword} /> */}
+        <Route path="/browse" component={Browse} />
       </Switch>
 
       <Footer />

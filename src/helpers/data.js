@@ -100,6 +100,17 @@ export const data = {
       email: `Email inválido. Tente novamente ou crie uma conta.`,
       somethingWrong: `Oops. Algo deu errado. Tente novamente`,
     },
+    browse: {
+      nav: {
+        categories: [
+          { name: 'Início', path: '/browse' },
+          { name: 'Séries', path: '/series' },
+          { name: 'Filmes', path: '/movies' },
+          { name: 'Bombando', path: '/trending' },
+          { name: 'Minha Lista', path: '/my-list' },
+        ],
+      },
+    },
   },
   en: {
     hero: {
@@ -198,6 +209,17 @@ export const data = {
       password: `Invalid password. Try again or reset your password.`,
       email: `Invalid email. Try again or create a new account.`,
       somethingWrong: `Oops. Something went wrong. Try again`,
+    },
+    browse: {
+      nav: {
+        categories: [
+          { name: 'Home', path: '/browse' },
+          { name: 'TV Shows', path: '/series' },
+          { name: 'Movies', path: '/movies' },
+          { name: 'New & Popular', path: '/trending' },
+          { name: 'My List', path: '/my-list' },
+        ],
+      },
     },
   },
 };
