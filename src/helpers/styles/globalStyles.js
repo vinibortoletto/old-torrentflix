@@ -19,17 +19,13 @@ export const GlobalStyles = styled.createGlobalStyle`
     font-family: ${vars.fontFamily.openSans};
     border: none;
     font-size: 1.1rem;
+    list-style: none;
   }
 
   body {
     position: relative;
     background-color: ${vars.color.black};
     color: ${vars.color.white};
-    padding: 1.5rem ${vars.size.small} 0 ${vars.size.small};
-
-    ${media('4k')} {
-      padding: 1.5rem ${vars.size.big} 0 ${vars.size.big};
-    }
   }
 
   select {

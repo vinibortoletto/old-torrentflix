@@ -1,9 +1,9 @@
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 import { media } from '../../helpers/styles/mixins';
 import { vars } from '../../helpers/styles/variables';
 
 export const Image = styled.img`
-  height: ${(props) => (props.hero ? 'calc(80vh + 5.5rem)' : '100%')};
+  height: 100%;
   width: 100%;
 
   position: absolute;
@@ -16,15 +16,22 @@ export const Image = styled.img`
   filter: contrast(1.1);
   object-fit: cover;
 
-  ${media('tablet')} {
-    height: ${(props) => props.hero && '100vh'};
-  }
+  /* Hero */
+  ${(props) =>
+    props.hero &&
+    css`
+      height: 80vh;
 
-  ${media('laptop-l')} {
-    height: ${(props) => props.hero && 'calc(70vh + 5.5rem)'};
-  }
+      ${media('tablet')} {
+        height: 100vh;
+      }
 
-  ${media('4k')} {
-    height: ${(props) => props.hero && 'calc(50vh + 5.5rem)'};
-  }
+      ${media('laptop-l')} {
+        height: 90vh;
+      }
+
+      ${media('4k')} {
+        height: 52vh;
+      }
+    `}
 `;

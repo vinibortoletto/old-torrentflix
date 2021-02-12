@@ -4,7 +4,7 @@ import { media } from '../../helpers/styles/mixins';
 import { Button as BaseButton } from '../../components/Button/Button.styles';
 
 export const Main = styled.main`
-  padding: 7rem 5vw;
+  padding: 7rem ${vars.size.small};
   color: ${vars.color.black};
 
   .content-wrapper {

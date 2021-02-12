@@ -2,27 +2,6 @@ import styled from 'styled-components/macro';
 import { media } from '../../helpers/styles/mixins';
 import { vars } from '../../helpers/styles/variables';
 
-// export const Header = styled.header`
-//   max-width: 120rem;
-//   height: 4rem;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   margin: auto;
-
-//   ${media('tablet')} {
-//     height: 6rem;
-//   }
-// `;
-
-// export const Logo = styled.img`
-//   max-width: 8rem;
-
-//   ${media('tablet')} {
-//     max-width: 16rem;
-//   }
-// `;
-
 export const Main = styled.main`
   margin-bottom: 6rem;
   padding: 0 ${vars.size.small};

@@ -4,7 +4,6 @@ import { vars } from '../../../helpers/styles/variables';
 
 export const Section = styled.section`
   padding: 4rem 0;
-  margin: 0 -${vars.size.small};
 
   h1 {
     text-align: center;
@@ -43,6 +42,8 @@ export const Button = styled.button`
   }
 
   ${media('laptop-s')} {
+    font-size: ${vars.fontSize.medium};
+
     svg {
       transform: scale(1.5);
     }
@@ -52,6 +53,10 @@ export const Button = styled.button`
 export const List = styled.ul`
   max-width: 35rem;
   margin: auto;
+
+  ${media('laptop-s')} {
+    max-width: 50rem;
+  }
 
   li {
     margin-bottom: 0.5rem;
@@ -74,10 +79,14 @@ export const List = styled.ul`
   }
 
   p {
-    padding: 1.3rem 1.5rem;
+    padding: 2rem;
 
     &:nth-child(2) {
       padding-top: 0;
+    }
+
+    ${media('laptop-s')} {
+      font-size: ${vars.fontSize.medium};
     }
   }
 `;

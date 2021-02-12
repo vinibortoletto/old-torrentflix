@@ -33,7 +33,7 @@ export default function Login() {
 
       setTimeout(() => {
         localStorage.removeItem('email');
-        history.push('/');
+        history.push('/browse');
       }, 2000);
     } catch (err) {
       if (err.code.includes('user-not-found')) setError(data.error.email);

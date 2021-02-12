@@ -7,7 +7,7 @@ import { useData } from '../../../contexts/Data';
 import { Container } from './Hero.styles';
 
 export default function Hero() {
-  const { language, data } = useData();
+  const { data } = useData();
   const { title, subtitle, emailText } = data.hero;
 
   return (

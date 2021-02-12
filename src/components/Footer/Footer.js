@@ -8,7 +8,6 @@ import {
   Select,
   Title,
 } from './Footer.styles';
-import { vars } from '../../helpers/styles/variables';
 
 export default function Footer() {
   const location = useLocation();
@@ -35,44 +34,47 @@ export default function Footer() {
 
   return (
     <Container>
-      <div className="footer-wrapper">
-        <Title>{title}</Title>
+      <Title>{title}</Title>
 
-        <Navigation>
-          <ul>
-            {navLinks.map((link, index) => (
-              <li key={index}>
-                <a href="/">{link}</a>
-              </li>
-            ))}
-          </ul>
-        </Navigation>
+      <Navigation>
+        <ul>
+          {navLinks.map((link, index) => (
+            <li key={index}>
+              <a href="/">{link}</a>
+            </li>
+          ))}
+        </ul>
+      </Navigation>
 
-        <Select>
-          <label htmlFor="language">
-            {language === 'en' ? 'Language' : 'Idioma'}
-          </label>
+      <Select>
+        <label
+          htmlFor="language"
+          aria-label={language === 'en' ? 'Language' : 'Idioma'}
+        >
+          {language === 'en' ? 'Language' : 'Idioma'}
+        </label>
 
-          <select
-            onChange={changeLanguage}
-            value={language}
-            name="language"
-            id="language"
-          >
-            <option value="en">English</option>
-            <option value="br">Português</option>
-          </select>
-        </Select>
+        <select
+          onChange={changeLanguage}
+          value={language}
+          name="language"
+          id="language"
+        >
+          <option value="en">English</option>
+          <option value="br">Português</option>
+        </select>
+      </Select>
 
-        <Copyright>
-          <p>{copyright}</p>
-          <p className="strong">
-            {language === 'en'
-              ? `Created by Vinicius Bortoletto`
-              : `Criado por Vinicius Bortoletto`}
-          </p>
-        </Copyright>
-      </div>
+      <Copyright>
+        <p>{copyright}</p>
+        <p className="strong">
+          {language === 'en'
+            ? `Created by Vinicius Bortoletto`
+            : `Criado por Vinicius Bortoletto`}
+        </p>
+      </Copyright>
+
+      <div className="bg" />
     </Container>
   );
 }

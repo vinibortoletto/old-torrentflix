@@ -1,35 +1,21 @@
 import styled from 'styled-components/macro';
-import { vars } from '../../helpers/styles/variables';
 import { media } from '../../helpers/styles/mixins';
+import { vars } from '../../helpers/styles/variables';
 
 export const Container = styled.footer`
   color: ${vars.color.lightGrey};
-  padding: 4rem 5vw 2rem 5vw;
-  margin: 0 -${vars.size.small};
-
-  .footer-wrapper {
-    max-width: 75rem;
-    margin: auto;
-
-    ${media('tablet')} {
-      padding: 0 ${vars.size.medium};
-    }
-
-    ${media('laptop-l')} {
-      padding: 0;
-    }
-  }
+  padding: 4rem ${vars.size.medium} 2rem ${vars.size.medium};
 
   h1 {
     font-weight: normal;
   }
 
-  ${media('tablet')} {
-    margin: 0 -${vars.size.small};
+  ${media('laptop-l')} {
+    padding: 4rem 25vw 2rem 25vw;
   }
 
   ${media('4k')} {
-    margin: 0 -${vars.size.big};
+    padding: 4rem 35vw 2rem 35vw;
   }
 `;
 

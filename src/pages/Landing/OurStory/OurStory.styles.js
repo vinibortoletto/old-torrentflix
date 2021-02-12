@@ -1,14 +1,13 @@
 import styled from 'styled-components/macro';
-import { vars } from '../../../helpers/styles/variables';
 import { media } from '../../../helpers/styles/mixins';
+import { vars } from '../../../helpers/styles/variables';
 
 export const Container = styled.div`
   section {
     width: 100%;
     max-width: 83rem;
 
-    /* padding: 4rem ${vars.size.small}; */
-    padding: 4rem 0;
+    padding: 4rem ${vars.size.small};
 
     margin: auto;
     text-align: center;

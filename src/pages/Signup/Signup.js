@@ -1,21 +1,13 @@
-import React, { useState, useRef, useEffect } from 'react';
-import {
-  Link,
-  useRouteMatch,
-  Switch,
-  Route,
-  useHistory,
-} from 'react-router-dom';
-
-import Header from '../../components/Header/Header';
-import devicesImg from '../../images/misc/devices.png';
-import { Main, Devices, Text, Button } from './Signup.styles';
-import { useAuth } from '../../contexts/Auth';
-import Input from '../../components/Input/Input';
-import { useData } from '../../contexts/Data';
-
-import Loading from '../../components/Loading/Loading';
+import React, { useEffect, useRef, useState } from 'react';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 import { ErrorMessage } from '../../components/ErrorMessage/ErrorMessage.styles';
+import Header from '../../components/Header/Header';
+import Input from '../../components/Input/Input';
+import Loading from '../../components/Loading/Loading';
+import { useAuth } from '../../contexts/Auth';
+import { useData } from '../../contexts/Data';
+import devicesImg from '../../images/misc/devices.png';
+import { Button, Devices, Main, Text } from './Signup.styles';
 
 export default function Signup() {
   const { signup, getEmailFromLocalStorage, loading, setLoading } = useAuth();
@@ -54,7 +46,7 @@ export default function Signup() {
 
       setTimeout(() => {
         localStorage.removeItem('email');
-        history.push('/');
+        history.push('/browse');
       }, 2000);
     } catch (err) {
       if (language === 'en') setError(err.message);
@@ -72,7 +64,7 @@ export default function Signup() {
 
   return (
     <>
-      <Header signup />
+      <Header signup simple />
 
       <Main>
         <div className="content-wrapper">

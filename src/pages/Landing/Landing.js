@@ -8,7 +8,7 @@ import OurStory from './OurStory/OurStory';
 export default function Landing() {
   return (
     <>
-      <Header />
+      <Header landing simple />
 
       <main>
         <Hero />
