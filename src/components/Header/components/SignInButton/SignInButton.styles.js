@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components/macro';
-import { vars } from '../../../helpers/styles/variables';
-import { media } from '../../../helpers/styles/mixins';
-import { Button as BaseButton } from '../../Button/Button.styles';
+import { vars } from '../../../../helpers/styles/variables';
+import { media } from '../../../../helpers/styles/mixins';
+import { Button as BaseButton } from '../../../Button/Button.styles';
 
 export const Button = styled(BaseButton)`
   height: 1.7rem;

@@ -1,17 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../../images/misc/logo.png';
-import { Container, Logo } from './Header.styles';
-import SignInButton from './SignInButton/SignInButton';
+import Full from './Full/Full';
+import Simple from './Simple/Simple';
 
-export default function Header({ signup, login }) {
+export default function Header({ landing, signup, login, simple }) {
   return (
-    <Container className={signup && 'signup'} signup={signup}>
-      <Link to="/">
-        <Logo login={login} signup={signup} src={logo} alt="torrentflix logo" />
-      </Link>
-
-      {!login && <SignInButton signup={signup} />}
-    </Container>
+    <>
+      {simple ? (
+        <Simple landing={landing} login={login} signup={signup} />
+      ) : (
+        <Full />
+      )}
+    </>
   );
 }
