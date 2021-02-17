@@ -1,53 +1,69 @@
-import React, { useEffect } from 'react';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import InfoIcon from '@material-ui/icons/Info';
-import {
-  Container,
-  Background,
-  Title,
-  Info,
-  Description,
-  Buttons,
-} from './Spotlight.styles';
-import { Button } from '../../../components/Button/Button.styles';
+/* eslint-disable camelcase */
+import React, { useEffect, useState } from 'react';
+import { useData } from '../../../contexts/Data';
+import { useLibrary } from '../../../contexts/Library';
+import { Container } from './Spotlight.styles';
 
-import sample from '../../../images/misc/joker1.jpg';
+// Components
+import Loading from '../../../components/Loading/Loading';
+import Background from './Background/Background';
+import Title from './Title/Title';
+import Info from './Info/Info';
+import Description from './Description/Description';
+import Buttons from './Buttons/Buttons';
 
 export default function Spotlight() {
+  const { language } = useData();
+  const { spotlight, loading, setLoading } = useLibrary();
+  const [img, setImg] = useState('');
+  const [year, setYear] = useState('');
+  const [seasons, setSeasons] = useState('');
+  const [description, setDescription] = useState('');
+
+  useEffect(() => {
+    if (spotlight) {
+      setImg(`https://image.tmdb.org/t/p/original${spotlight.backdrop_path}`);
+      setYear(new Date(spotlight.first_air_date).getFullYear());
+      setDescription(`${spotlight.overview.split('.', 1)}.`);
+
+      if (spotlight.number_of_seasons === 1)
+        setSeasons(
+          `${spotlight.number_of_seasons} ${
+            language === 'en' ? 'season' : 'temporada'
+          }`,
+        );
+      else
+        setSeasons(
+          `${spotlight.number_of_seasons} ${
+            language === 'en' ? 'seasons' : 'temporadas'
+          }`,
+        );
+    }
+  }, [spotlight]);
+
   return (
     <Container>
-      <Background>
-        <div className="overlay" />
-        <img src={sample} alt="sample alt" />
-      </Background>
+      {!loading && spotlight ? (
+        <>
+          <Background img={img} />
 
-      <div className="content-wrapper">
-        <Title>Title</Title>
+          <div className="content-wrapper">
+            <Title title={spotlight.name} />
 
-        <Info>
-          <h2>2999</h2>
-          <h3>14</h3>
-          <h4>4 temporadas</h4>
-        </Info>
+            <Info
+              score={spotlight.vote_average}
+              year={year}
+              seasons={seasons}
+            />
 
-        <Description>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam
-            delectus quos rerum! Fuga, quasi provident!
-          </p>
-        </Description>
+            <Description description={description} />
 
-        <Buttons>
-          <Button small className="watch" type="button">
-            <PlayArrowIcon />
-            assistir
-          </Button>
-          <Button small className="more-info" type="button">
-            <InfoIcon />
-            informações
-          </Button>
-        </Buttons>
-      </div>
+            <Buttons />
+          </div>
+        </>
+      ) : (
+        <Loading app />
+      )}
     </Container>
   );
 }

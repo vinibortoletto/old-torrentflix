@@ -6,6 +6,7 @@ export const vars = {
     lightGrey: '#757575',
     white: '#ffffff',
     red: '#E50914',
+    green: '#21c465',
     warning: '#e87c03',
   },
   fontFamily: {

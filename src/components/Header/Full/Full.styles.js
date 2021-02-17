@@ -4,7 +4,7 @@ import { media } from '../../../helpers/styles/mixins';
 
 export const Container = styled.header`
   padding: 0.5rem 1.5rem;
-  max-width: 75rem;
+  max-width: 80rem;
   margin: auto;
 
   display: flex;
@@ -26,9 +26,5 @@ export const Container = styled.header`
     .search-n-nav-wrapper {
       width: 100%;
     }
-  }
-
-  ${media('laptop-s')} {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
   }
 `;

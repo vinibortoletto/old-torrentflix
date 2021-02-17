@@ -1,17 +1,25 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from '../../components/Header/Header';
-import Spotlight from './Spotlight/Spotlight';
+import { useLibrary } from '../../contexts/Library';
+import { Main } from './Browse.styles';
 import Row from './Row/Row';
+import Spotlight from './Spotlight/Spotlight';
 
 export default function Browse() {
+  const { libraryRows } = useLibrary();
+
   return (
     <>
       <Header />
 
-      <main>
+      <Main>
         <Spotlight />
-        <Row />
-      </main>
+        <div className="row-wrapper">
+          {libraryRows.map((list, index) => (
+            <Row key={index} list={list} />
+          ))}
+        </div>
+      </Main>
     </>
   );
 }

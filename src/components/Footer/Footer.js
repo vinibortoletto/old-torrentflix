@@ -56,7 +56,7 @@ export default function Footer() {
 
         <select
           onChange={changeLanguage}
-          value={language}
+          value={language || ''}
           name="language"
           id="language"
         >

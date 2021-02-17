@@ -1,20 +1,22 @@
 import React from 'react';
 import { Container, Title, List } from './Row.styles';
-import sample from '../../../images/misc/joker1.jpg';
 
-export default function Row() {
+export default function Row({ list }) {
   return (
     <Container>
-      <Title>row title</Title>
+      <Title>{list.title}</Title>
 
       <List>
-        <li>
-          <img src={sample} alt="" />
-        </li>
-
-        <li>
-          <img src={sample} alt="" />
-        </li>
+        {list.item.results.map((item) => (
+          <li key={item.id}>
+            <span>{item.name ? item.name : item.title}</span>
+            <div className="overlay" />
+            <img
+              src={`https://image.tmdb.org/t/p/w300${item.backdrop_path}`}
+              alt={`${item.name} poster`}
+            />
+          </li>
+        ))}
       </List>
     </Container>
   );
