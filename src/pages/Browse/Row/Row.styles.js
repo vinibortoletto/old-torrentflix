@@ -32,7 +32,9 @@ export const CardTitle = styled.span`
 
   text-align: center;
   font-size: ${vars.fontSize.small};
-  opacity: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.2s ease;
 `;
 
 export const CardImg = styled.img`
@@ -40,6 +42,7 @@ export const CardImg = styled.img`
   height: 8rem;
   object-fit: cover;
   border-radius: 0.3rem;
+  transition: 0.2s ease;
 `;
 
 export const CardOverlay = styled.div`
@@ -56,26 +59,11 @@ export const CardOverlay = styled.div`
 
 export const List = styled.ul`
   display: flex;
-  gap: 0.2rem;
-  overflow: hidden;
+  gap: 0.3rem;
+  /* overflow: hidden; */
 
   li {
     position: relative;
     cursor: pointer;
-
-    &:hover {
-      ${CardImg} {
-        filter: brightness(0.3);
-      }
-
-      ${CardTitle} {
-        opacity: 1;
-      }
-    }
-  }
-
-  ${CardTitle},
-  ${CardImg} {
-    transition: 0.2s ease;
   }
 `;

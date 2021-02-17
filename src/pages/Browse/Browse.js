@@ -15,9 +15,11 @@ export default function Browse() {
       <Main>
         <Spotlight />
         <div className="row-wrapper">
-          {libraryRows.map((list, index) => (
+          {/* {libraryRows.map((list, index) => (
             <Row key={index} list={list} />
-          ))}
+          ))} */}
+
+          <Row list={libraryRows[0]} />
         </div>
       </Main>
     </>
