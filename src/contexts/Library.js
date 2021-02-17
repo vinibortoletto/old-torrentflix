@@ -18,7 +18,7 @@ export function LibraryProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [spotlight, setSpotlight] = useState();
 
-  async function fetchLibrary(endpoint) {
+  async function basicFetch(endpoint) {
     const req = await fetch(`${API_BASE}${endpoint}`);
     const json = await req.json();
     return json;
@@ -29,7 +29,7 @@ export function LibraryProvider({ children }) {
       {
         slug: 'originals',
         title: language === 'en' ? 'netflix originals' : 'originais netflix',
-        item: await fetchLibrary(
+        item: await basicFetch(
           `/discover/tv?with_networks=213&api_key=${API_KEY}&${libraryLanguage}&${libraryLanguage}`,
         ),
       },
@@ -37,7 +37,7 @@ export function LibraryProvider({ children }) {
       {
         slug: 'trending',
         title: language === 'en' ? 'trending' : 'em alta',
-        item: await fetchLibrary(
+        item: await basicFetch(
           `/trending/all/week?&api_key=${API_KEY}&${libraryLanguage}`,
         ),
       },
@@ -45,7 +45,7 @@ export function LibraryProvider({ children }) {
       {
         slug: 'toprated',
         title: language === 'en' ? 'top rated' : 'populares',
-        item: await fetchLibrary(
+        item: await basicFetch(
           `/movie/top_rated?&api_key=${API_KEY}&${libraryLanguage}`,
         ),
       },
@@ -53,7 +53,7 @@ export function LibraryProvider({ children }) {
       {
         slug: 'action',
         title: language === 'en' ? 'action' : 'ação',
-        item: await fetchLibrary(
+        item: await basicFetch(
           `/discover/movie?with_genres=28&api_key=${API_KEY}&${libraryLanguage}`,
         ),
       },
@@ -61,7 +61,7 @@ export function LibraryProvider({ children }) {
       {
         slug: 'comedy',
         title: language === 'en' ? 'comedy' : 'comédia',
-        item: await fetchLibrary(
+        item: await basicFetch(
           `/discover/movie?with_genres=35&api_key=${API_KEY}&${libraryLanguage}`,
         ),
       },
@@ -69,7 +69,7 @@ export function LibraryProvider({ children }) {
       {
         slug: 'horror',
         title: language === 'en' ? 'horror' : 'terror',
-        item: await fetchLibrary(
+        item: await basicFetch(
           `/discover/movie?with_genres=27&api_key=${API_KEY}&${libraryLanguage}`,
         ),
       },
@@ -77,7 +77,7 @@ export function LibraryProvider({ children }) {
       {
         slug: 'romance',
         title: language === 'en' ? 'romance' : 'romântico',
-        item: await fetchLibrary(
+        item: await basicFetch(
           `/discover/movie?with_genres=10749&api_key=${API_KEY}&${libraryLanguage}`,
         ),
       },
@@ -85,7 +85,7 @@ export function LibraryProvider({ children }) {
       {
         slug: 'documentary',
         title: language === 'en' ? 'documentary' : 'documentário',
-        item: await fetchLibrary(
+        item: await basicFetch(
           `/discover/movie?with_genres=99&api_key=${API_KEY}&${libraryLanguage}`,
         ),
       },
@@ -96,7 +96,7 @@ export function LibraryProvider({ children }) {
     let newSpotlight = {};
 
     if (id)
-      newSpotlight = await fetchLibrary(
+      newSpotlight = await basicFetch(
         `/tv/${id}?&api_key=${API_KEY}&${libraryLanguage}`,
       );
 
@@ -110,7 +110,7 @@ export function LibraryProvider({ children }) {
   }
 
   useEffect(() => {
-    async function loadContent() {
+    async function fetchContent() {
       setLoading(true);
 
       const newLibraryRows = await getLibraryRows();
@@ -121,7 +121,7 @@ export function LibraryProvider({ children }) {
       setLoading(false);
     }
 
-    loadContent();
+    fetchContent();
   }, []);
 
   const value = { libraryRows, loading, setLoading, spotlight };

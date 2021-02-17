@@ -13,6 +13,47 @@ export const Title = styled.h1`
   margin-bottom: 0.5rem;
 `;
 
+export const Icon = styled.img`
+  width: 1.5rem;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 2;
+`;
+
+export const CardTitle = styled.span`
+  width: 90%;
+
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  z-index: 2;
+  transform: translateX(-50%);
+
+  text-align: center;
+  font-size: ${vars.fontSize.small};
+  opacity: 0;
+`;
+
+export const CardImg = styled.img`
+  width: 15rem;
+  height: 8rem;
+  object-fit: cover;
+  border-radius: 0.3rem;
+`;
+
+export const CardOverlay = styled.div`
+  width: 15rem;
+  height: 8rem;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 10%, transparent);
+`;
+
 export const List = styled.ul`
   display: flex;
   gap: 0.2rem;
@@ -23,51 +64,18 @@ export const List = styled.ul`
     cursor: pointer;
 
     &:hover {
-      img {
+      ${CardImg} {
         filter: brightness(0.3);
       }
 
-      span {
+      ${CardTitle} {
         opacity: 1;
       }
     }
   }
 
-  span {
-    width: 90%;
-
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    z-index: 2;
-    transform: translateX(-50%);
-
-    text-align: center;
-    font-size: ${vars.fontSize.small};
-    opacity: 0;
-  }
-
-  .overlay {
-    width: 15rem;
-    height: 8rem;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 10%, transparent);
-  }
-
-  img {
-    width: 15rem;
-    height: 8rem;
-    object-fit: cover;
-    border-radius: 0.3rem;
-  }
-
-  span,
-  img {
+  ${CardTitle},
+  ${CardImg} {
     transition: 0.2s ease;
   }
 `;
