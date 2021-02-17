@@ -11,9 +11,12 @@ import Landing from './pages/Landing/Landing';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 import Browse from './pages/Browse/Browse';
+import { useLibrary } from './contexts/Library';
+import Loading from './components/Loading/Loading';
 
 export default function App() {
   const location = useLocation();
+  const { loading } = useLibrary();
 
   useEffect(() => {
     // Change background color
@@ -34,16 +37,22 @@ export default function App() {
 
   return (
     <>
-      <GlobalStyles />
+      {loading ? (
+        <Loading app />
+      ) : (
+        <>
+          <GlobalStyles />
 
-      <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
-        <Route path="/browse" component={Browse} />
-      </Switch>
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/browse" component={Browse} />
+          </Switch>
 
-      <Footer />
+          <Footer />
+        </>
+      )}
     </>
   );
 }
