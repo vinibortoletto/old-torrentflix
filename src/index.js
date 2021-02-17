@@ -11,14 +11,14 @@ import { DataProvider } from './contexts/Data';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <AuthProvider>
-        <LibraryProvider>
-          <DataProvider>
+      <DataProvider>
+        <AuthProvider>
+          <LibraryProvider>
             <ScrollToTop />
             <App />
-          </DataProvider>
-        </LibraryProvider>
-      </AuthProvider>
+          </LibraryProvider>
+        </AuthProvider>
+      </DataProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root'),

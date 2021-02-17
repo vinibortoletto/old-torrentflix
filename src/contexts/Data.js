@@ -8,17 +8,19 @@ export function useData() {
 }
 
 export function DataProvider({ children }) {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState(
+    JSON.parse(localStorage.getItem('language')),
+  );
   const [data, setData] = useState(websiteData.en);
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     // Set language and saves it to localStorage
     const localLanguage = JSON.parse(localStorage.getItem('language'));
-    if (localLanguage) {
-      setLanguage(localLanguage);
-    } else {
-      localStorage.setItem('language', JSON.stringify(language));
+
+    if (!localLanguage) {
+      localStorage.setItem('language', JSON.stringify('en'));
+      setLanguage('en');
     }
   }, []);
 
