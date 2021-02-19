@@ -80,6 +80,11 @@ export const List = styled.ul`
       z-index: 100;
       top: 0;
       z-index: 99;
+
+      display: none;
+      ${media('laptop-s')} {
+        display: block;
+      }
     }
 
     &::before {
@@ -88,11 +93,6 @@ export const List = styled.ul`
 
     &::after {
       right: 0;
-    }
-
-    display: none;
-    ${media('laptop-s')} {
-      display: block;
     }
   }
 `;
