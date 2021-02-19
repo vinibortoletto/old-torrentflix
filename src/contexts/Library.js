@@ -15,7 +15,7 @@ export function LibraryProvider({ children }) {
   const libraryLanguage =
     language === 'br' ? 'language=pt-BR' : 'language=en-US';
   const [libraryRows, setLibraryRows] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [spotlight, setSpotlight] = useState();
 
   async function basicFetch(endpoint) {
@@ -111,18 +111,20 @@ export function LibraryProvider({ children }) {
 
   useEffect(() => {
     async function fetchContent() {
-      setLoading(true);
-
       const newLibraryRows = await getLibraryRows();
       setLibraryRows(newLibraryRows);
 
       await getSpotlightMovie(newLibraryRows);
-
-      setLoading(false);
     }
 
     fetchContent();
   }, []);
+
+  useEffect(() => {
+    // Set loading to true while fetching content
+    if (spotlight) setLoading(false);
+    else setLoading(true);
+  }, [spotlight]);
 
   const value = { libraryRows, loading, setLoading, spotlight };
 

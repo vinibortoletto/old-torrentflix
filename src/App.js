@@ -16,7 +16,7 @@ import Loading from './components/Loading/Loading';
 
 export default function App() {
   const location = useLocation();
-  const { loading } = useLibrary();
+  const { loading, spotlight } = useLibrary();
 
   useEffect(() => {
     // Change background color

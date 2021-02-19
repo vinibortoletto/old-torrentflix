@@ -43,27 +43,17 @@ export default function Spotlight() {
 
   return (
     <Container>
-      {!loading && spotlight ? (
-        <>
-          <Background img={img} />
+      <Background img={img} />
 
-          <div className="content-wrapper">
-            <Title title={spotlight.name} />
+      <div className="content-wrapper">
+        <Title title={spotlight.name} />
 
-            <Info
-              score={spotlight.vote_average}
-              year={year}
-              seasons={seasons}
-            />
+        <Info score={spotlight.vote_average} year={year} seasons={seasons} />
 
-            <Description description={description} />
+        <Description description={description} />
 
-            <Buttons />
-          </div>
-        </>
-      ) : (
-        <Loading app />
-      )}
+        <Buttons />
+      </div>
     </Container>
   );
 }
