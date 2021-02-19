@@ -6,7 +6,7 @@ import Row from './Row/Row';
 import Spotlight from './Spotlight/Spotlight';
 
 export default function Browse() {
-  const { libraryRows } = useLibrary();
+  const { libraryRows, spotlight } = useLibrary();
 
   return (
     <>
@@ -15,11 +15,11 @@ export default function Browse() {
       <Main>
         <Spotlight />
         <div className="row-wrapper">
-          {/* {libraryRows.map((list, index) => (
+          {libraryRows.map((list, index) => (
             <Row key={index} list={list} />
-          ))} */}
+          ))}
 
-          <Row list={libraryRows[0]} />
+          {/* <Row list={libraryRows[0]} /> */}
         </div>
       </Main>
     </>
