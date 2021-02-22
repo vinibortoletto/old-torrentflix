@@ -1,20 +1,30 @@
 /* eslint-disable camelcase */
+
+// ICONS
+import InfoIcon from '@material-ui/icons/Info';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import React, { useEffect, useState } from 'react';
+
+// COMPONENTS
+import { Button } from '../../../components/Button/Button.styles';
+
+// CONTEXTS
 import { useData } from '../../../contexts/Data';
 import { useLibrary } from '../../../contexts/Library';
-import { Container } from './Spotlight.styles';
 
-// Components
-import Loading from '../../../components/Loading/Loading';
-import Background from './Background/Background';
-import Title from './Title/Title';
-import Info from './Info/Info';
-import Description from './Description/Description';
-import Buttons from './Buttons/Buttons';
+// STYLES
+import {
+  Background,
+  Buttons,
+  Container,
+  Description,
+  Info,
+  Title,
+} from './Spotlight.styles';
 
 export default function Spotlight() {
   const { language } = useData();
-  const { spotlight, loading, setLoading } = useLibrary();
+  const { spotlight } = useLibrary();
   const [img, setImg] = useState('');
   const [year, setYear] = useState('');
   const [seasons, setSeasons] = useState('');
@@ -43,16 +53,32 @@ export default function Spotlight() {
 
   return (
     <Container>
-      <Background img={img} />
+      <Background img={img}>
+        <div className="header-overlay" />
+        <div className="img" />
+      </Background>
 
       <div className="content-wrapper">
-        <Title title={spotlight.name} />
+        <Title>{spotlight.name}</Title>
 
-        <Info score={spotlight.vote_average} year={year} seasons={seasons} />
+        <Info>
+          <h2>{spotlight.vote_average}</h2>
+          <h3>{year}</h3>
+          <h4>{seasons}</h4>
+        </Info>
 
-        <Description description={description} />
+        <Description>{description}</Description>
 
-        <Buttons />
+        <Buttons>
+          <Button small className="watch" type="button">
+            <PlayArrowIcon />
+            {language === 'en' ? 'watch' : 'assistir'}
+          </Button>
+          <Button small className="more-info" type="button">
+            <InfoIcon />
+            {language === 'en' ? 'information' : 'informações'}
+          </Button>
+        </Buttons>
       </div>
     </Container>
   );
