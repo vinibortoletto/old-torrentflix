@@ -4,7 +4,7 @@ import { vars } from '../../helpers/styles/variables';
 
 export const Container = styled.footer`
   color: ${vars.color.lightGrey};
-  padding: 4rem ${vars.size.medium} 2rem ${vars.size.medium};
+  padding: 4rem ${vars.sidePadding.small} 2rem ${vars.sidePadding.small};
 
   h1 {
     font-weight: normal;

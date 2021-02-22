@@ -4,7 +4,7 @@ import { vars } from '../../helpers/styles/variables';
 
 export const Main = styled.main`
   margin-bottom: 6rem;
-  padding: 0 ${vars.size.small};
+  padding: 0 ${vars.sidePadding.small};
 
   h1 {
     margin: 1rem 0 2rem 0;

@@ -14,7 +14,7 @@ export const Section = styled.section`
     max-width: 40rem;
     margin: auto;
     margin-top: 3rem;
-    padding: 0 ${vars.size.small};
+    padding: 0 ${vars.sidePadding.small};
 
     ${media('tablet')} {
       padding: 0;

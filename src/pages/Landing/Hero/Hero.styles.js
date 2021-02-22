@@ -5,7 +5,7 @@ import { vars } from '../../../helpers/styles/variables';
 export const Container = styled.section`
   height: calc(80vh - 58.23px);
   max-width: 100%;
-  padding: 0 ${vars.size.small};
+  padding: 0 ${vars.sidePadding.small};
 
   display: flex;
   flex-direction: column;

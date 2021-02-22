@@ -14,7 +14,7 @@ export const Container = styled.header`
   ${(props) =>
     props.landing &&
     css`
-      padding: 1.5rem ${vars.size.small} 0 ${vars.size.small};
+      padding: 1.5rem ${vars.sidePadding.small} 0 ${vars.sidePadding.small};
 
       ${media('tablet')} {
         padding: 1.5rem 3rem 0 3rem;
@@ -25,7 +25,7 @@ export const Container = styled.header`
   ${(props) =>
     props.signup &&
     css`
-      padding: 0.5rem 0;
+      padding: 0.5rem ${vars.sidePadding.small};
       border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     `}
 
@@ -87,7 +87,6 @@ export const Button = styled(BaseButton)`
       background-color: transparent;
       font-weight: bold;
       color: ${vars.color.black};
-      margin-right: 2vw;
 
       &:hover {
         text-decoration: underline;
