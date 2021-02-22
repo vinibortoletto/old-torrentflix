@@ -4,6 +4,11 @@ import { vars } from '../../../helpers/styles/variables';
 
 export const Container = styled.div`
   position: relative;
+  top: ${vars.size.header.mobile};
+
+  ${media('tablet')} {
+    top: ${vars.size.header.tablet};
+  }
 
   ${media('laptop-s')} {
     position: static;
@@ -25,6 +30,7 @@ export const Container = styled.div`
 
     ${media('laptop-l')} {
       padding: 1.5rem 3rem;
+      padding-top: 7rem;
     }
   }
 `;
@@ -154,9 +160,14 @@ export const Background = styled.div`
     z-index: -1;
 
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 9%);
+    display: none;
 
     ${media('tablet')} {
       height: 85vh;
+    }
+
+    ${media('tablet')} {
+      display: block;
     }
   }
 

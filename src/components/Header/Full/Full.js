@@ -29,6 +29,17 @@ export default function Header({ landing, signup, login, full }) {
     });
   }, [location]);
 
+  useEffect(() => {
+    function toggleHeaderBg() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) header.classList.add('active');
+      else header.classList.remove('active');
+    }
+
+    window.addEventListener('scroll', toggleHeaderBg);
+    return () => window.removeEventListener('scroll', toggleHeaderBg);
+  }, []);
+
   return (
     <Container className={signup && 'signup'} signup={signup}>
       <div className="menu-n-logo-wrapper">

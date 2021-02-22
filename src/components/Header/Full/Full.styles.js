@@ -3,12 +3,14 @@ import { vars } from '../../../helpers/styles/variables';
 import { media } from '../../../helpers/styles/mixins';
 
 export const Container = styled.header`
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
   padding: 0.5rem 1.5rem;
-  /* max-width: 80rem; */
-  /* margin: auto; */
-
   display: flex;
   justify-content: space-between;
+  background: ${vars.color.darkGrey};
 
   .menu-n-logo-wrapper {
     display: flex;
@@ -23,6 +25,13 @@ export const Container = styled.header`
   }
 
   ${media('laptop-s')} {
+    background: transparent;
+    transition: 0.2s ease;
+
+    &.active {
+      background: ${vars.color.darkGrey};
+    }
+
     .search-n-nav-wrapper {
       width: 100%;
     }

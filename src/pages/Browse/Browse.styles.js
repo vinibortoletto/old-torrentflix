@@ -4,6 +4,10 @@ import { vars } from '../../helpers/styles/variables';
 
 export const Main = styled.main`
   .row-wrapper {
-    /* margin-top: -4rem; */
+    margin-top: ${vars.size.header.mobile};
+
+    ${media('tablet')} {
+      margin-top: ${vars.size.header.tablet};
+    }
   }
 `;

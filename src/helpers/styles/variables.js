@@ -23,6 +23,7 @@ export const vars = {
     small: '5vw',
     medium: '10vw',
     big: '18vw',
+    header: { mobile: '48px', tablet: '64px' },
   },
   borderRadius: {
     small: '.2rem',
