@@ -1,98 +1,96 @@
 import styled from 'styled-components/macro';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-
 import { media } from '../../../helpers/styles/mixins';
 import { vars } from '../../../helpers/styles/variables';
 
 export const Container = styled.div`
-  padding: 0 1rem;
   margin-bottom: 2rem;
+  padding-left: ${vars.sidePadding.small};
+
+  ${media('tablet')} {
+    padding-left: ${vars.sidePadding.medium};
+  }
+
+  ${media('laptop-l')} {
+    padding-left: ${vars.sidePadding.big};
+  }
 `;
 
 export const Title = styled.h1`
   font-weight: bold;
   text-transform: capitalize;
   margin-bottom: 0.5rem;
+
+  ${media('laptop-l')} {
+    font-size: ${vars.fontSize.responsive};
+  }
 `;
 
 export const List = styled.ul`
-  /* display: flex; */
-  /* gap: 0.3rem; */
-  /* overflow: hidden; */
-
   position: relative;
 
   li {
     width: 15rem;
     height: 8rem;
     position: relative;
-    /* cursor: pointer; */
-    /* margin-right: 0.3rem; */
+    cursor: pointer;
+
+    ${media('laptop-l')} {
+      width: 20vw;
+      height: 10vw;
+    }
   }
 
   .slick-slide {
-    /* position: relative; */
+    position: relative !important;
     margin: 0 0.15rem;
   }
 
   .slick-next,
   .slick-prev {
+    height: 100%;
+    width: 2.5rem;
+
     position: absolute;
     z-index: 100;
-    height: 8rem;
+    background: rgba(0, 0, 0, 0.8);
 
+    /* Hidden in mobile */
     display: none !important;
     ${media('laptop-s')} {
       display: block !important;
     }
+
+    /* Hidden until row is hovered */
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease;
   }
+
+  &:hover {
+    /* Show on hover */
+    .slick-next,
+    .slick-prev {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  .slick-next::before,
+  .slick-prev::before {
+    font-size: 4rem;
+    line-height: 0;
+  }
+
   .slick-prev {
     left: 0;
-    padding-left: 0.5rem;
-
     &::before {
       content: '‹';
-      font-size: 4rem;
-      line-height: 0;
     }
   }
   .slick-next {
     right: 0;
-    padding-right: 0.5rem;
-
     &::before {
       content: '›';
-      font-size: 4rem;
-      line-height: 0;
-    }
-  }
-
-  .slick-slider {
-    &::before,
-    &::after {
-      content: '';
-      background: rgba(0, 0, 0, 0.8);
-      width: 2.5rem;
-      height: 8rem;
-
-      position: absolute;
-      z-index: 100;
-      top: 0;
-      z-index: 99;
-
-      display: none;
-      ${media('laptop-s')} {
-        display: block;
-      }
-    }
-
-    &::before {
-      left: 0;
-    }
-
-    &::after {
-      right: 0;
     }
   }
 `;
@@ -103,6 +101,12 @@ export const CardIcon = styled.img`
   top: 0.5rem;
   left: 0.5rem;
   z-index: 2;
+
+  ${media('laptop-l')} {
+    width: 1.5vw;
+    top: 0.5vw;
+    left: 0.5vw;
+  }
 `;
 
 export const CardTitle = styled.span`
@@ -116,9 +120,13 @@ export const CardTitle = styled.span`
 
   text-align: center;
   font-size: ${vars.fontSize.small};
-  text-transform: uppercase;
   font-weight: bold;
   transition: 0.2s ease;
+  text-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+
+  ${media('laptop-l')} {
+    font-size: 1vw;
+  }
 `;
 
 export const CardImg = styled.img`
@@ -126,6 +134,11 @@ export const CardImg = styled.img`
   height: 8rem;
   object-fit: cover;
   border-radius: 0.3rem;
+
+  ${media('laptop-l')} {
+    width: 20vw;
+    height: 10vw;
+  }
 `;
 
 export const CardOverlay = styled.div`
@@ -138,4 +151,5 @@ export const CardOverlay = styled.div`
   z-index: 1;
 
   background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 10%, transparent);
+  border-radius: 0.3rem;
 `;

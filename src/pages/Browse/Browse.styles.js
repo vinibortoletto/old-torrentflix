@@ -4,7 +4,6 @@ import { vars } from '../../helpers/styles/variables';
 
 export const Main = styled.main`
   .row-wrapper {
-    max-width: 80rem;
-    margin: auto;
+    /* margin-top: -4rem; */
   }
 `;

@@ -20,10 +20,11 @@ export const Container = styled.div`
     }
   }
 
+  /* LEFT SHADOW */
   &::before {
     content: '';
     width: 100%;
-    height: 70vh;
+    height: 50vh;
 
     position: absolute;
     top: 0;
@@ -37,10 +38,11 @@ export const Container = styled.div`
     }
   }
 
+  /* BOTTOM SHADOW */
   &::after {
     content: '';
     width: 100%;
-    height: 70vh;
+    height: 50vh;
 
     position: absolute;
     top: 0;
@@ -59,7 +61,7 @@ export const Container = styled.div`
   }
 
   .img {
-    height: 70vh;
+    height: 50vh;
     width: 100%;
 
     position: absolute;

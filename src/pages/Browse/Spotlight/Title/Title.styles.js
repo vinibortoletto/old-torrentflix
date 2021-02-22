@@ -10,14 +10,6 @@ export const Container = styled.h1`
 
   ${media('tablet')} {
     width: 60vw;
-    font-size: 2rem;
-  }
-
-  ${media('laptop-s')} {
-    font-size: 3rem;
-  }
-
-  ${media('laptop-l')} {
-    font-size: 4rem;
+    font-size: 5vw;
   }
 `;

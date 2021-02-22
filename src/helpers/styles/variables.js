@@ -17,6 +17,7 @@ export const vars = {
     medium: '1.75rem',
     big: '2.5rem',
     large: '3rem',
+    responsive: '1.4vw',
   },
   size: {
     small: '5vw',
@@ -25,5 +26,10 @@ export const vars = {
   },
   borderRadius: {
     small: '.2rem',
+  },
+  sidePadding: {
+    small: '1.5rem',
+    medium: '2rem',
+    big: '3rem',
   },
 };

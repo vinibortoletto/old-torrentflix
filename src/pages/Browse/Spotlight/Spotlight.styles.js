@@ -10,22 +10,21 @@ export const Container = styled.div`
   }
 
   .content-wrapper {
-    height: 60vh;
-    max-width: 80rem;
+    height: 40vh;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    margin: auto;
-    padding: 1.5rem;
+    padding: ${vars.sidePadding.small};
 
     ${media('tablet')} {
       height: 75vh;
+      padding: 2rem;
     }
 
-    ${media('laptop-s')} {
-      padding: 1.5rem 2rem;
+    ${media('laptop-l')} {
+      padding: 1.5rem 3rem;
     }
   }
 `;

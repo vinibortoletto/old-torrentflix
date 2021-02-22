@@ -4,8 +4,8 @@ import { media } from '../../../helpers/styles/mixins';
 
 export const Container = styled.header`
   padding: 0.5rem 1.5rem;
-  max-width: 80rem;
-  margin: auto;
+  /* max-width: 80rem; */
+  /* margin: auto; */
 
   display: flex;
   justify-content: space-between;
@@ -26,5 +26,9 @@ export const Container = styled.header`
     .search-n-nav-wrapper {
       width: 100%;
     }
+  }
+
+  ${media('laptop-l')} {
+    padding: 1rem 3rem;
   }
 `;

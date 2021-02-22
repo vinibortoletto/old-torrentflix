@@ -3,18 +3,29 @@ import { media } from '../../../../helpers/styles/mixins';
 import { vars } from '../../../../helpers/styles/variables';
 
 export const Container = styled.div`
-  margin-top: 1rem;
   display: flex;
   align-items: center;
   gap: 1rem;
 
+  ${media('tablet')} {
+    margin-top: 1rem;
+  }
+
+  ${media('laptop-l')} {
+    margin-top: 2vw;
+  }
+
   svg {
-    width: 1rem;
     margin: 0;
     margin-right: 0.5rem;
 
     ${media('tablet')} {
-      width: 1.5rem;
+      transform: scale(1.5);
+    }
+
+    ${media('laptop-l')} {
+      margin-right: 1rem;
+      transform: scale(2);
     }
   }
 
@@ -24,10 +35,16 @@ export const Container = styled.div`
     font-size: ${vars.fontSize.small};
     text-transform: capitalize;
     font-weight: bold;
+    line-height: 0;
 
     ${media('tablet')} {
       font-size: 1rem;
       padding: 1.2rem 1.5rem;
+    }
+
+    ${media('laptop-l')} {
+      font-size: ${vars.fontSize.responsive};
+      padding: 1.7vw 2.3vw;
     }
   }
 
