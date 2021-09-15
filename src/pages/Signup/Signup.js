@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 import { ErrorMessage } from '../../components/ErrorMessage/ErrorMessage.styles';
 import Header from '../../components/Header/Header';
@@ -100,7 +100,7 @@ export default function Signup() {
               type="password"
               required
               inputRef={passwordRef}
-              onChange={validatePassword}
+              onChange={useCallback(validatePassword)}
             />
 
             <div className="password-error">

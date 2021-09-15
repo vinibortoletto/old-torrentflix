@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import Input from '../../../components/Input/Input';
 import { useData } from '../../../contexts/Data';
@@ -45,7 +45,7 @@ export default function Login() {
   }
 
   return (
-    <Form onSubmit={loginToWebsite}>
+    <Form onSubmit={useCallback(loginToWebsite)}>
       {error && <ErrorMessage>{error}</ErrorMessage>}
 
       <Input

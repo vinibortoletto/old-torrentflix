@@ -1,6 +1,6 @@
 import MenuIcon from '@material-ui/icons/Menu';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { Container, Button, Shadow, Navigation } from './HamburgerMenu.styles';
 
 export default function HamburgerMenu() {
@@ -17,7 +17,7 @@ export default function HamburgerMenu() {
       const shadowElmt = document.getElementById('mobile-nav-shadow');
       const menuElmt = document.getElementById('mobile-nav');
 
-      if (e.target.id === shadowElmt.id) {
+      if (e.target.id && e.target.id === shadowElmt.id) {
         shadowElmt.classList.toggle('active');
         menuElmt.classList.toggle('active');
       }
@@ -29,7 +29,7 @@ export default function HamburgerMenu() {
 
   return (
     <Container>
-      <Button onClick={toggleMenu} type="button">
+      <Button onClick={useCallback(toggleMenu)} type="button">
         <MenuIcon />
       </Button>
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import { Container, PasswordButton } from './Input.styles';
@@ -53,7 +53,7 @@ export default function Input({
       />
       <label htmlFor={name}>{label}</label>
       {type === 'password' && (
-        <PasswordButton onClick={togglePassword} type="button">
+        <PasswordButton onClick={useCallback(togglePassword)} type="button">
           {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
         </PasswordButton>
       )}
