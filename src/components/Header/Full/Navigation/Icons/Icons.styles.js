@@ -5,30 +5,36 @@ import { media } from '../../../../../helpers/styles/mixins';
 export const List = styled.ul`
   display: flex;
   align-items: center;
-  gap: 0 2rem;
-
-  ${media('laptop-s')} {
-    /* display: block; */
-  }
+  gap: 0 1.5rem;
 
   li {
-    /* line-height: 0; */
     position: relative;
+  }
+
+  .search {
+    display: flex;
+  }
+
+  .notification {
     display: none;
 
-    ${media('laptop-s')} {
+    ${media('tablet')} {
       display: block;
     }
   }
 
   svg {
+    fill: ${vars.color.white};
     transform: scale(1.1);
   }
 
-  .profile {
-    display: none;
+  .notification:hover .notification-menu {
+    opacity: 1;
+    pointer-events: all;
+  }
 
-    &:hover .profile-dropdown-menu {
+  .profile {
+    &:hover .profile-menu {
       opacity: 1;
       pointer-events: all;
     }
@@ -37,27 +43,17 @@ export const List = styled.ul`
       width: 2rem;
       border-radius: ${vars.borderRadius.small};
     }
-
-    ${media('tablet')} {
-      display: block;
-    }
   }
 `;
 
-export const ProfileDropdownMenu = styled.div`
-  /* Invisible by default */
-  opacity: 0;
-  transition: 0.3s ease-out;
-  pointer-events: none;
-
-  width: 12rem;
+export const Menu = css`
   position: absolute;
   right: 0;
   top: 3rem;
 
   background-color: ${vars.color.black};
   border: 1px solid ${vars.color.grey};
-  border-radius: ${vars.borderRadius.small};
+  border-radius: 0.5rem 0 0.5rem 0.5rem;
   padding: 1rem;
   font-size: ${vars.fontSize.small};
 
@@ -71,10 +67,15 @@ export const ProfileDropdownMenu = styled.div`
     top: -2rem;
   }
 
-  &.show {
-    opacity: 1;
-    pointer-events: all;
-  }
+  /* Invisible by default */
+  opacity: 0;
+  transition: 0.3s ease-out;
+  pointer-events: none;
+`;
+
+export const ProfileMenu = styled.div`
+  ${Menu};
+  width: 12rem;
 
   ul {
     display: grid;
@@ -97,5 +98,37 @@ export const ProfileDropdownMenu = styled.div`
 
   #secondary-menu {
     font-weight: bold;
+  }
+`;
+
+export const NotificationMenu = styled.div`
+  ${Menu}
+  width: 25rem;
+  font-size: 1rem;
+  padding: 1rem 0;
+
+  li {
+    display: flex;
+
+    &:nth-child(1) {
+      border-bottom: 1px solid ${vars.color.grey};
+      padding-bottom: 1rem;
+    }
+
+    &:nth-child(2) {
+      padding-top: 1rem;
+    }
+  }
+
+  img {
+    padding-left: 1rem;
+    object-fit: contain;
+    margin-right: 1rem;
+  }
+
+  h2 {
+    margin-top: 0.5rem;
+    font-size: ${vars.fontSize.small};
+    color: ${vars.color.lightGrey};
   }
 `;

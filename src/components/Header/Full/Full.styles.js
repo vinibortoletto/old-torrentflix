@@ -16,7 +16,7 @@ export const Container = styled.header`
     display: flex;
   }
 
-  .search-n-nav-wrapper {
+  .nav-wrapper {
     display: flex;
   }
 
@@ -32,7 +32,7 @@ export const Container = styled.header`
       background: ${vars.color.darkGrey};
     }
 
-    .search-n-nav-wrapper {
+    .nav-wrapper {
       width: 100%;
     }
   }

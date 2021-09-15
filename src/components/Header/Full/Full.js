@@ -12,7 +12,6 @@ import user from '../../../images/users/1.png';
 import HamburgerMenu from './HamburgerMenu/HamburgerMenu';
 import Logo from './Logo/Logo';
 import Navigation from './Navigation/Navigation';
-import Search from './Search/Search';
 
 export default function Header({ landing, signup, login, full }) {
   const location = useLocation();
@@ -47,8 +46,7 @@ export default function Header({ landing, signup, login, full }) {
         <Logo />
       </div>
 
-      <div className="search-n-nav-wrapper">
-        <Search />
+      <div className="nav-wrapper">
         <Navigation />
       </div>
     </Container>
