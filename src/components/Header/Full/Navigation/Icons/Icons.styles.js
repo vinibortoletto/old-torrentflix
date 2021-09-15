@@ -49,7 +49,7 @@ export const List = styled.ul`
 export const Menu = css`
   position: absolute;
   right: 0;
-  top: 3rem;
+  top: 3.5rem;
 
   background-color: ${vars.color.black};
   border: 1px solid ${vars.color.grey};
